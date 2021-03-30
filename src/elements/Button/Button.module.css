@@ -1,0 +1,18 @@
+.Button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 12rem;
+  min-width: 12rem;
+  height: 6rem;
+  min-height: 6rem;
+  border-radius: 42px;
+  background-color: #477bff;
+  cursor: pointer;
+}
+
+.Button__name {
+  color: #ffffff;
+  font-size: 2rem;
+  font-weight: 400;
+}

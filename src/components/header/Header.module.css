@@ -1,0 +1,27 @@
+.Header {
+  width: 100vw;
+  /* height: 13rem; */
+  margin-top: 3rem;
+  padding-bottom: 3rem;
+  border-bottom: 2px solid black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Header__left {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 17%;
+  margin-left: 4rem;
+}
+
+.Header__right {
+  align-self: flex-end;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  margin-right: 4rem;
+  width: 30%;
+}
