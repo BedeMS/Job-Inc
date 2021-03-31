@@ -9,6 +9,10 @@
   padding: 2rem;
 }
 
+.JobCard:first-of-type {
+  margin-top: 0;
+}
+
 .JobCard__post {
   margin-left: 2rem;
   cursor: pointer;

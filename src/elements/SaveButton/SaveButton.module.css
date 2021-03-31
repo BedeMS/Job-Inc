@@ -17,3 +17,13 @@
   font-size: 2.5rem;
   cursor: pointer;
 }
+
+.SaveButton__icon:hover + .SaveButton__name,
+.SaveButton__icon:hover {
+  transform: scale(1.1);
+}
+
+.SaveButton__icon:active + .SaveButton__name,
+.SaveButton__icon:active {
+  transform: scale(0.9);
+}

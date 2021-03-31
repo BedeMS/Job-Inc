@@ -2,11 +2,12 @@
   width: 60%;
   height: 95vh;
   padding: 2rem;
-  background-color: #f9f9f9;
+  background-color: #f2f2f2;
   border-radius: 13px;
   position: sticky;
   top: 0;
-  /* -webkit-sticky: sticky; */
+  margin-left: 2rem;
+  -webkit-sticky: sticky;
 }
 
 .JobPost__header {
