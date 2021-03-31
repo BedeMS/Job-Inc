@@ -10,6 +10,15 @@
   background-color: #477bff;
   color: #ffffff;
   cursor: pointer;
+  transition: all 0.3s ease-in;
+}
+
+.Button:hover {
+  background-color: #0e30a7;
+}
+
+.ButtonLight:hover {
+  box-shadow: 0 5px 8px rgba(0, 0, 0, 0.6);
 }
 
 .ButtonLight {
@@ -25,6 +34,7 @@
   height: 5rem;
   min-height: 5rem;
   border-radius: 42px;
+  transition: all 0.1s ease-in;
 }
 
 .Button__name {

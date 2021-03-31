@@ -1,0 +1,26 @@
+.JobDesc {
+  width: 80%;
+  margin: 4rem auto 0;
+  height: 80%;
+  overflow-y: scroll;
+}
+
+.JobDesc ul {
+  margin: 3rem 0;
+  padding-left: 2rem;
+  list-style: circle;
+}
+
+.JobDesc li {
+  margin: 1rem 0;
+}
+
+.JobDesc p {
+  margin: 3rem 0;
+}
+
+.JobDesc p,
+.JobDesc li {
+  font-size: 1.8rem;
+  width: 80%;
+}

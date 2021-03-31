@@ -1,0 +1,44 @@
+.JobPost {
+  width: 60%;
+  height: 95vh;
+  padding: 2rem;
+  background-color: #f9f9f9;
+  border-radius: 13px;
+  position: sticky;
+  top: 0;
+  /* -webkit-sticky: sticky; */
+}
+
+.JobPost__header {
+  width: 90%;
+  height: 15%;
+  /* height: auto; */
+  margin: 0 auto;
+  border-bottom: 1px solid #cccccc;
+}
+
+.JobPost__header_title {
+  font-size: 3rem;
+  font-weight: 600;
+}
+
+.JobPost__header_loc,
+.JobPost__header_company {
+  font-size: 2.4rem;
+  font-weight: 400;
+}
+
+.JobPost__header_div {
+  display: flex;
+  justify-content: space-between;
+}
+.JobPost__header_buttons {
+  width: 25%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.JobDesc {
+  height: 85%;
+  overflow-y: scroll;
+}
