@@ -1,0 +1,12 @@
+.Home {
+  width: 100%;
+  height: auto;
+}
+
+.Home__features {
+  width: 100%;
+  height: auto;
+  margin-top: 5rem;
+  display: flex;
+  justify-content: space-around;
+}
