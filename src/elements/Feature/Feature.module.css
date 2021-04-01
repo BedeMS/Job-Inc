@@ -1,6 +1,7 @@
 .Feature {
   width: 40%;
-  height: auto;
+  height: 60rem;
+  overflow-y: scroll;
   border: 1px solid #000000;
   text-align: center;
 }
@@ -8,5 +9,32 @@
 .Feature__title {
   font-size: 3rem;
   font-weight: 600;
-  margin-bottom: 2rem;
+  /* margin-bottom: 2rem; */
+  /* Position Sticky Marker */
+  position: sticky;
+  -webkit-sticky: sticky;
+  top: 0;
+  width: 100%;
+  background-color: #ffffff;
+  margin: 1rem auto 1rem auto;
+  height: 5rem;
+}
+
+.Feature__recent {
+  width: 80%;
+  margin: 1rem auto 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+.Feature__search {
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: #868686;
+  transition: all .5s ease-in-out;
+}
+
+
+.Feature__search:hover {
+  color: #000000;
 }

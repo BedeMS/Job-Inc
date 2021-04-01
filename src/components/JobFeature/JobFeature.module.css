@@ -1,0 +1,55 @@
+.JobFeature {
+  width: 95%;
+  height: 12rem;
+  margin: 1rem auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 0.25px solid #000000;
+  border-radius: 10px;
+}
+
+
+
+.JobFeature__img {
+  width: 10rem;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  margin-left: 1rem;
+}
+
+.JobFeature__info,
+.JobFeature__time {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.JobFeature__title {
+  font-size: 2.4rem;
+  font-weight: 600;
+}
+
+.JobFeature__company,
+.JobFeature__location {
+  font-size: 2rem;
+  font-weight: 400;
+  color: #f40006;
+}
+
+.JobFeature__location {
+  color: #c4c4c4;
+}
+
+.JobFeature__time {
+  width: 10rem;
+  margin-left: 1rem;
+}
+
+.JobFeature__date,
+.JobFeature__hours {
+  font-size: 1.4rem;
+}

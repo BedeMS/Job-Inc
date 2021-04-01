@@ -3,6 +3,7 @@ import Header from "../../components/Header/Header";
 import SearchBar from "../../components/SearchBar/SearchBar";
 import Feature from "../../elements/Feature/Feature";
 import classes from "./Home.module.css";
+import JobFeature from "../../components/JobFeature/JobFeature";
 
 class Home extends Component {
   render() {
@@ -12,9 +13,21 @@ class Home extends Component {
         <SearchBar />
         <div className={classes.Home__features}>
           <Feature title="Featured Jobs for You">
-              
+            <JobFeature />
+            <JobFeature />
+            <JobFeature />
+            <JobFeature />
+            <JobFeature />
+            <JobFeature />
+            <JobFeature />
+            <JobFeature />
           </Feature>
-          <Feature title="Based on Your Recent Search" />
+          <Feature title="Based on Your Recent Search" recentSearch>
+            <JobFeature />
+            <JobFeature />
+            <JobFeature />
+          </Feature>
+          {/* <Feature title="Based on Your Recent Search" /> */}
         </div>
       </div>
     );
