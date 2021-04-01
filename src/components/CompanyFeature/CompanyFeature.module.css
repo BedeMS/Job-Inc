@@ -1,0 +1,38 @@
+.CompanyFeature {
+  width: 95%;
+  margin: 1rem auto;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  /* justify-content: space-between; */
+}
+
+.CompanyFeature__img {
+  width: 5rem;
+  height: 5rem;
+}
+
+.CompanyFeature__info {
+  margin-left: 2rem;
+  width: 50%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.CompanyFeature__title,
+.CompanyFeature__location {
+  font-size: 2.5rem;
+}
+
+.CompanyFeature__title {
+  color: #f20006;
+}
+
+.CompanyFeature__location {
+  color: #c4c4c4;
+}
+
+.CompanyFeature__buttons {
+  margin-left: auto;
+  display: flex;
+}

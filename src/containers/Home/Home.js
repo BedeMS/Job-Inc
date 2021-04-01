@@ -14,17 +14,8 @@ class Home extends Component {
         <div className={classes.Home__features}>
           <Feature title="Featured Jobs for You">
             <JobFeature />
-            <JobFeature />
-            <JobFeature />
-            <JobFeature />
-            <JobFeature />
-            <JobFeature />
-            <JobFeature />
-            <JobFeature />
           </Feature>
           <Feature title="Based on Your Recent Search" recentSearch>
-            <JobFeature />
-            <JobFeature />
             <JobFeature />
           </Feature>
           {/* <Feature title="Based on Your Recent Search" /> */}

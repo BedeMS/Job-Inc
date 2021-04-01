@@ -1,0 +1,17 @@
+.Browse {
+  width: 100%;
+  height: auto;
+}
+
+.Browse__features {
+  width: 100%;
+  height: auto;
+  margin-top: 5rem;
+  display: flex;
+  justify-content: space-around;
+}
+
+.Browse__features__top {
+  display: flex;
+  flex-wrap: wrap;
+}

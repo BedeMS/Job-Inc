@@ -1,0 +1,45 @@
+.FollowButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 10rem;
+  min-width: 10rem;
+  height: 5rem;
+  min-height: 5rem;
+  border-radius: 42px;
+  color: #0e30a7;
+  border: 0.5px solid #0e30a7;
+  cursor: pointer;
+  transition: all 0.3s ease-in;
+  margin-left: 1rem;
+}
+
+.FollowButton:hover {
+  box-shadow: 0 5px 8px rgba(0, 0, 0, 0.6);
+}
+
+.FollowButton__name,
+.FollowButton__followed {
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+.FollowButton__followed {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 5rem;
+  height: 5rem;
+  min-height: 5rem;
+  border-radius: 42px;
+  background-color: #0e30a7;
+  color: #ffffff;
+  border: 0.5px solid #0e30a7;
+  cursor: pointer;
+  margin-left: 1rem;
+  transition: all 0.3s ease-in;
+}
+
+.FollowButton__followed:hover {
+  box-shadow: 0 5px 8px rgba(0, 0, 0, 0.6);
+}
