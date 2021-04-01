@@ -9,8 +9,6 @@
   border-radius: 10px;
 }
 
-
-
 .JobFeature__img {
   width: 10rem;
   height: 100%;
@@ -37,7 +35,7 @@
 .JobFeature__location {
   font-size: 2rem;
   font-weight: 400;
-  color: #f40006;
+  color: #0e30a7;
 }
 
 .JobFeature__location {

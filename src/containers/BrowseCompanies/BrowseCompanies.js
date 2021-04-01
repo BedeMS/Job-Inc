@@ -16,7 +16,7 @@ class Home extends Component {
             title="Top Companies"
             className={classes.Browse__features__top}
           >
-            <CompanyFeature />
+            <CompanyFeature followed />
             <CompanyFeature />
           </Feature>
           <Feature title="Companies for You">

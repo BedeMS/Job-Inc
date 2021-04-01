@@ -15,7 +15,7 @@ function CompanyFeature(props) {
         <p className={classes.CompanyFeature__location}>Toronto, Ontario</p>
       </div>
       <div className={classes.CompanyFeature__buttons}>
-        <Button name="Jobs" colorScheme="light" />
+        <Button name="Jobs" colorScheme="light" height="short" />
         <FollowButton followed={props.followed} />
       </div>
     </div>

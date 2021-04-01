@@ -1,16 +1,28 @@
 import React from "react";
-import classes from "./Button.module.css";
+import "./Button.css";
 
 const Button = (props) => {
-  return (
-    <div
-      className={
-        props.colorScheme === "light" ? classes.ButtonLight : classes.Button
-      }
-    >
-      <p className={classes.Button__name}>{props.name}</p>
-    </div>
-  );
+  const button =
+    props.height === "short" ? (
+      <div
+        className={
+          props.colorScheme === "light"
+            ? "Button ButtonLight ButtonShort"
+            : "Button"
+        }
+      >
+        <p className={"Button__name"}>{props.name}</p>
+      </div>
+    ) : (
+      <div
+        className={
+          props.colorScheme === "light" ? "Button ButtonLight" : "Button"
+        }
+      >
+        <p className={"Button__name"}>{props.name}</p>
+      </div>
+    );
+  return button;
 };
 
 export default Button;
