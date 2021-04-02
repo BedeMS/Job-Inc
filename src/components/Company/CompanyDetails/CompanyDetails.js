@@ -11,7 +11,9 @@ function CompanyDetails(props) {
     <div className={classes.CompanyDetails}>
       <img className={classes.CompanyDetails__banner} src={banner} />
       <div className={classes.CompanyDetails__header}>
-        <CompanyLogo className={classes.CompanyDetails__header__logo} />
+        <div className={classes.CompanyDetails__header__logo}>
+          <CompanyLogo />
+        </div>
         <h1 className={classes.CompanyDetails__header__title}>
           TD Canada Trust
         </h1>
@@ -27,8 +29,15 @@ function CompanyDetails(props) {
             socialMedia: [
               { facebook: "www.facebook.com" },
               { instagram: "www.instagram.com" },
+              { linkedin: "www.instagram.com" },
+              { facebook: "www.facebook.com" },
+              { instagram: "www.instagram.com" },
+              { linkedin: "www.instagram.com" },
             ],
           },
+          { Headquarters: "Toronto, Ontario" },
+          { Headquarters: "Toronto, Ontario" },
+          { Headquarters: "Toronto, Ontario" },
         ]}
       />
       <CompanyDescription />

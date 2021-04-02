@@ -1,8 +1,8 @@
 import React from "react";
-import classes from "./CompanyDescription";
+import classes from "./CompanyDescription.module.css";
 
 function CompanyDescription(props) {
-  return (
+  return ( 
     <div className={classes.CompanyDescription}>
       <p className={classes.CompanyDescription__label}>About TD</p>
       <p className={classes.CompanyDescription__desc}>

@@ -5,44 +5,56 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function Info(props) {
   const socialMedia = {
-    facebook: <FontAwesomeIcon icons={["fab", "facebook"]} />,
-    twitter: <FontAwesomeIcon icons={["fab", "twitter"]} />,
-    linkedin: <FontAwesomeIcon icons={["fab", "linkedin"]} />,
-    instagram: <FontAwesomeIcon icons={["fab", "instagram"]} />,
+    facebook: (
+      <FontAwesomeIcon
+        icon={["fab", "facebook"]}
+        className={classes.Info__social__icon}
+      />
+    ),
+    twitter: (
+      <FontAwesomeIcon
+        icon={["fab", "twitter"]}
+        className={classes.Info__social__icon}
+      />
+    ),
+    linkedin: (
+      <FontAwesomeIcon
+        icon={["fab", "linkedin"]}
+        className={classes.Info__social__icon}
+      />
+    ),
+    instagram: (
+      <FontAwesomeIcon
+        icon={["fab", "instagram"]}
+        className={classes.Info__social__icon}
+      />
+    ),
   };
 
-  // const companyInfo = props.info.map((el, ind) => <div>{el}</div>);
-
   const companyInfo = props.info.map((el, ind) => {
-    if (Object.keys(el)[0] === "website") {
+    if (Object.keys(el)[0] === "Website") {
       return (
         <div className={classes.Info}>
-          <p className={classes.info__label}>Website</p>
+          <p className={classes.Info__label}>Website</p>
           {/* change to link */}
-          <p className={classes.info__website}>{Object.values(el)[0]}</p>
+          <p className={classes.Info__website}>{Object.values(el)[0]}</p>
         </div>
       );
     } else if (Object.keys(el)[0] === "socialMedia") {
+      //Generate each  icon based on data provided by employer
       return (
         <div className={classes.Info}>
-          <p className={classes.info__label}>Follow Us</p>
-          <div className={classes.Info__social}>
-            {Object.values(el).map((sm, i) => {
-              return (
-                /* change to link */
-                <p className={classes.info__Social}>
-                  {socialMedia[Object.keys(sm)[0]]}
-                </p>
-              );
-            })}
-          </div>
+          <p className={classes.Info__label}>Follow Us</p>
+          {Object.values(el)[0].map((sm, i) => {
+            return socialMedia[Object.keys(sm)[0]];
+          })}
         </div>
       );
     } else {
       return (
         <div className={classes.Info}>
-          <p className={classes.info__label}>{Object.keys(el)[0]}</p>
-          <p>{Object.values(el)[0]}</p>
+          <p className={classes.Info__label}>{Object.keys(el)[0]}</p>
+          <p className={classes.Info__answer}>{Object.values(el)[0]}</p>
         </div>
       );
     }

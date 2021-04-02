@@ -1,0 +1,15 @@
+.CompanyDescription {
+  width: 100%;
+  margin: 2rem auto;
+}
+
+.CompanyDescription__label {
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.CompanyDescription__desc {
+  width: 80%;
+  margin: 1rem auto;
+  font-size: 1.5rem;
+}

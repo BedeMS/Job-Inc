@@ -1,0 +1,38 @@
+.CompanyInfo {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.Info {
+  width: 33%;
+  text-align: center;
+  margin: 2rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Info__label {
+  margin-right: 2rem;
+  font-weight: 500;
+  font-size: 1.5rem;
+}
+
+.Info__website {
+  font-size: 2rem;
+  color: #477bff;
+}
+
+.Info__social__icon {
+  font-size: 2.5rem;
+  margin-right: 1rem;
+  color: #fb0006;
+}
+
+.Info__answer {
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin-right: 1rem;
+}
