@@ -26,6 +26,8 @@ class Home extends Component {
             <CompanyFeature />
             <CompanyFeature />
             <CompanyFeature />
+            <CompanyFeature followed />
+            <CompanyFeature />
           </Feature>
         </div>
       </div>
