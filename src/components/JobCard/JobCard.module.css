@@ -9,6 +9,10 @@
   padding: 2rem;
 }
 
+.JobCard * {
+  margin: 1rem auto;
+}
+
 .JobCard:first-of-type {
   margin-top: 0;
 }
