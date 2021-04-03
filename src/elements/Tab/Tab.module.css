@@ -1,0 +1,25 @@
+.Tab {
+  width: 15rem;
+  height: 6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #c4c4c4;
+  margin-bottom: 2rem;
+  cursor: pointer;
+}
+
+.Tab:hover {
+  background-color: #4b4b4b;
+  color: white;
+}
+
+.active {
+  color: #ffffff;
+  background-color: #4b4b4b;
+  cursor: auto;
+}
+
+.Tab__name {
+  font-size: 1.8rem;
+}

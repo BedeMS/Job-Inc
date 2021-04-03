@@ -1,6 +1,7 @@
 import JobListings from "../JobListings/JobListings";
 import Home from "../Home/Home";
-import User from "../User/User";
+import Auth from "../Auth/Auth";
+import Dashboard from "../Dashboard/Dashboard";
 import BrowseCompanies from "../BrowseCompanies/BrowseCompanies";
 import Company from "../../components/Company/Company";
 import { library } from "@fortawesome/fontawesome-svg-core";
@@ -12,7 +13,7 @@ import "./App.css";
 library.add(far, fab, faBookmark);
 
 function App() {
-  return <User />;
+  return <Dashboard />;
 }
 
 export default App;
