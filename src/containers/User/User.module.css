@@ -42,19 +42,10 @@
 .active {
   background-color: #447bff;
   cursor: auto;
+  border-bottom: 1px solid #ffffff;
 }
 
 .active:hover {
   background-color: #447bff;
   color: #000000;
 }
-
-/* .User__form {
-  /* height: 70rem; */
-  /* min-height: 70rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 13px;
-  background-color: #447bff;
-}  */

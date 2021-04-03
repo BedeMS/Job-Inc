@@ -4,7 +4,7 @@ import classes from "./Input.module.css";
 function Input(props) {
   return (
     <div className={classes.InputWrapper}>
-      <label className={classes.Label} htmlFor={props.name}>
+      <label className={props.colorScheme ===  "dark" ? classes.LabelDark : classes.Label} htmlFor={props.name}>
         {props.label}:
       </label>
       <input

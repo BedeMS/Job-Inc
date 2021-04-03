@@ -6,8 +6,8 @@ import Button from "../../../elements/Button/Button";
 function SignIn(props) {
   return (
     <div className={classes.SignIn}>
-      <Input label="username" name="username" />
-      <Input label="password" name="password" />
+      <Input label="username" name="username" colorScheme="dark" />
+      <Input label="password" name="password" colorScheme="dark"/>
       <Button  name="Sign In" colorScheme="light" />
     </div>
   );
