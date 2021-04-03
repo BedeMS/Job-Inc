@@ -5,7 +5,7 @@ function Input(props) {
   return (
     <div className={classes.InputWrapper}>
       <label className={classes.Label} htmlFor={props.name}>
-        {props.label}
+        {props.label}:
       </label>
       <input
         className={classes.Input}

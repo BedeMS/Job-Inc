@@ -32,6 +32,10 @@
   font-weight: 400;
 }
 
+.JobPost__header_company {
+  color:  #0e30a7;
+}
+
 .JobPost__header_div {
   display: flex;
   justify-content: space-between;

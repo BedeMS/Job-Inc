@@ -46,7 +46,7 @@ function Info(props) {
         <div className={classes.Info}>
           <p className={classes.Info__label}>Follow Us</p>
           {Object.values(el)[0].map((sm, i) => {
-            return socialMedia[Object.keys(sm)[0]];
+            return <div>{socialMedia[Object.keys(sm)[0]]}</div>;
           })}
         </div>
       );
