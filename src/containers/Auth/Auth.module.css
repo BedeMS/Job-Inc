@@ -1,15 +1,15 @@
-.User {
+.Auth {
   width: 100%;
   max-height: 100vh;
   overflow: hidden;
 }
 
-.User__registration {
+.Auth__registration {
   width: 50%;
   margin: 5rem auto;
 }
 
-.User__registration__type {
+.Auth__registration__type {
   width: 98%;
   margin: 0 auto;
   display: flex;
@@ -18,9 +18,9 @@
   height: 4rem;
 }
 
-.User__signIn,
-.User__signUp,
-.User__employerSignUp {
+.Auth__signIn,
+.Auth__signUp,
+.Auth__employerSignUp {
   height: 100%;
   display: flex;
   align-items: center;
@@ -33,9 +33,9 @@
   cursor: pointer;
 }
 
-.User__signIn:hover,
-.User__signUp:hover,
-.User__employerSignUp:hover {
+.Auth__signIn:hover,
+.Auth__signUp:hover,
+.Auth__employerSignUp:hover {
   background-color: #447cff8d;
 }
 
