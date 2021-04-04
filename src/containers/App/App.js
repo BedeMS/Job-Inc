@@ -7,10 +7,11 @@ import Company from "../../components/Company/Company";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { far } from "@fortawesome/free-regular-svg-icons";
 import { fab } from "@fortawesome/free-brands-svg-icons";
+import { fas } from "@fortawesome/free-solid-svg-icons";
 import { faBookmark } from "@fortawesome/free-solid-svg-icons";
 import "./App.css";
 
-library.add(far, fab, faBookmark);
+library.add(far, fab, fas, faBookmark);
 
 function App() {
   return <Dashboard />;

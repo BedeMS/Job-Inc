@@ -8,6 +8,7 @@ function Textarea(props) {
         {props.label}:
       </label>
       <textarea
+        // rows="60"
         className={classes.Textarea}
         type={props.type}
         id={props.name}

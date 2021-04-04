@@ -1,0 +1,30 @@
+.DeleteButton,
+.EditButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 5rem;
+  height: 5rem;
+  margin: 0 1rem 0;
+  border-radius: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease-out;
+}
+
+.DeleteButton:hover,
+.EditButton:hover {
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.6);
+}
+
+.DeleteButton {
+  background-color: #f40006;
+}
+
+.EditButton {
+  background-color: #0e30a7;
+}
+
+.Button__icon {
+  color: #ffffff;
+  font-size: 2.4rem;
+}

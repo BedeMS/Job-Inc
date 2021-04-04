@@ -1,30 +1,21 @@
-.TextareaWrapper {
+.SelectWrapper {
   display: flex;
   align-items: center;
-  margin-bottom: 2rem;
   margin-right: 5rem;
+  margin-bottom: 2rem;
   width: 80%;
 }
 
 .Label {
-  color: #ffffff;
-}
-
-.LabelDark {
-  color: #000000;
-}
-
-.Label,
-.LabelDark {
   margin-right: 2rem;
-  font-size: 2rem;
+  font-size: 2.4rem;
   width: 10rem;
   text-align: center;
 }
 
-.Textarea {
-  width: 90%;
-  height: 10rem;
+.Select {
+  width: 30rem;
+  height: 4.5rem;
   border: 1px solid #000000;
   border-radius: 3rem;
   padding: 0 2rem;
