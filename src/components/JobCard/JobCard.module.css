@@ -48,3 +48,12 @@
   justify-content: space-between;
   font-size: 1.75rem;
 }
+
+.JobCard__modify{
+  /* display: flex; */
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+}

@@ -5,6 +5,8 @@ import Textarea from "../../elements/Textarea/Textarea";
 import Input from "../../elements/Input/Input";
 import classes from "./Dashboard.module.css";
 import CreateJob from "../../components/CompanyDashboard/CreateJob/CreateJob";
+import EditProfile from "../../components/CompanyDashboard/EditProfile/EditProfile";
+import ManageJobs from "../../components/CompanyDashboard/ManageJobs/ManageJobs";
 
 class Dashboard extends Component {
   render() {
@@ -28,7 +30,7 @@ class Dashboard extends Component {
         <div className={classes.Board}>
           {tabs}
           <div className={classes.Board__panel}>
-              <CreateJob />
+              <EditProfile />
           </div>
         </div>
       </div>
