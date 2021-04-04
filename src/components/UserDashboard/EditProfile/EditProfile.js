@@ -1,12 +1,29 @@
-import React from 'react'
-import classes from './EditProfile.module.css'
+import React from "react";
+import classes from "./EditProfile.module.css";
+import ModifyButton from "../../../elements/ModifyButton/ModifyButton";
+import Button from "../../../elements/Button/Button";
 
 function EditProfile(props) {
-    return (
-        <div className={classes.EditProfile}>
-            
-        </div>
-    )
+  return (
+    <div className={classes.EditProfile}>
+      <div className={classes.Wrapper}>
+        <p className={classes.EditProfile__label}>username:</p>
+        <p className={classes.EditProfile__input}>Username</p>
+        <ModifyButton type="edit" />
+        <ModifyButton />
+      </div>
+      <div className={classes.Wrapper}>
+        <p className={classes.EditProfile__label}>email:</p>
+        <p className={classes.EditProfile__input}>google@gmail.com</p>
+        <ModifyButton type="edit" />
+        <ModifyButton />
+      </div>
+      <div className={classes.Wrapper}>
+        <Button name="Password Reset" />
+      </div>
+      <Button name="Update" />
+    </div>
+  );
 }
 
-export default EditProfile
+export default EditProfile;

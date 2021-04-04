@@ -5,8 +5,12 @@ import Textarea from "../../elements/Textarea/Textarea";
 import Input from "../../elements/Input/Input";
 import classes from "./Dashboard.module.css";
 import CreateJob from "../../components/CompanyDashboard/CreateJob/CreateJob";
-import EditProfile from "../../components/CompanyDashboard/EditProfile/EditProfile";
+import EmployerEditProfile from "../../components/CompanyDashboard/EditProfile/EditProfile";
 import ManageJobs from "../../components/CompanyDashboard/ManageJobs/ManageJobs";
+import UserEditProfile from "../../components/UserDashboard/EditProfile/EditProfile";
+import SavedCompanies from "../../components/UserDashboard/SavedCompanies/SavedCompanies";
+import SavedJobs from "../../components/UserDashboard/SavedJobs/SavedJobs";
+import EditProfile from "../../components/CompanyDashboard/EditProfile/EditProfile";
 
 class Dashboard extends Component {
   render() {
@@ -30,7 +34,7 @@ class Dashboard extends Component {
         <div className={classes.Board}>
           {tabs}
           <div className={classes.Board__panel}>
-              <EditProfile />
+            <SavedCompanies />
           </div>
         </div>
       </div>
