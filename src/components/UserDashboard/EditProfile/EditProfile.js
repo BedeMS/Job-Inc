@@ -9,19 +9,14 @@ function EditProfile(props) {
       <div className={classes.Wrapper}>
         <p className={classes.EditProfile__label}>username:</p>
         <p className={classes.EditProfile__input}>Username</p>
-        <ModifyButton type="edit" />
-        <ModifyButton />
       </div>
       <div className={classes.Wrapper}>
         <p className={classes.EditProfile__label}>email:</p>
         <p className={classes.EditProfile__input}>google@gmail.com</p>
-        <ModifyButton type="edit" />
-        <ModifyButton />
       </div>
       <div className={classes.Wrapper}>
         <Button name="Password Reset" />
       </div>
-      <Button name="Update" />
     </div>
   );
 }

@@ -6,7 +6,17 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 function SaveButton(props) {
   return (
     <div className={classes.SaveButton}>
-      <FontAwesomeIcon icon={["far", "bookmark"]} className={classes.SaveButton__icon} />
+      {props.saved ? (
+        <FontAwesomeIcon
+          icon={["fas", "bookmark"]}
+          className={classes.SaveButton__icon}
+        />
+      ) : (
+        <FontAwesomeIcon
+          icon={["far", "bookmark"]}
+          className={classes.SaveButton__icon}
+        />
+      )}
       {/* <FontAwesomeIcon icon="bookmark" className={classes.SaveButton__icon} /> */}
       <p className={classes.SaveButton__name}>Save</p>
     </div>

@@ -11,9 +11,17 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  /* justify-content: space-evenly; */
   width: 100%;
   margin: 2rem auto;
 }
+
+.CreateJob *:not(:last-child) {
+  margin-bottom: 2rem;
+}
+
+
+
 
 .Button {
   margin: 2rem auto;

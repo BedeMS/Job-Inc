@@ -22,7 +22,7 @@ const Button = (props) => {
         className={
           props.colorScheme === "light"
             ? "Button ButtonLight ButtonShort"
-            : "Button"
+            : "Button ButtonShort"
         }
       >
         {icon}

@@ -31,7 +31,9 @@ function CreateJob(props) {
       <div className={classes.Wrapper}>
         <Button name="Add Section" height="short" colorScheme="light" />
       </div>
-      <Button name="Submit" />
+      <div className={classes.Wrapper}>
+        <Button name="Submit" />
+      </div>
     </div>
   );
 }

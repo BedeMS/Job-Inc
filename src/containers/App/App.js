@@ -18,6 +18,7 @@ function App() {
   return (
     <Switch>
       <Route exact path="/" render={() => <Home />} />
+      <Route exact path="/employers" render={() => <Dashboard user />} />
       <Route exact path="/companies" render={() => <BrowseCompanies />} />
       <Route
         exact
