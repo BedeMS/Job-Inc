@@ -9,17 +9,21 @@
   background-color: #477bff;
   color: #ffffff;
   cursor: pointer;
-  transition: all 0.3s ease-in;
+  transition: background-color 0.3s ease-in;
 }
 .ButtonLight {
   background-color: #ffffff;
   color: #0e30a7;
   border: 0.5px solid #0e30a7;
-  transition: all 0.1s ease-in;
+  transition: background-color 0.1s ease-in;
 }
 
 .Button:hover {
   background-color: #0e30a7;
+}
+
+.Button:active {
+  transform: scale(0.97);
 }
 
 .ButtonLight:hover {
@@ -27,9 +31,15 @@
   background-color: #ffffff;
 }
 
-.Button__name {
+.Button__name,
+.Button__link {
   font-size: 2rem;
   font-weight: 400;
+}
+
+.Button__link {
+  color: #ffffff;
+  text-decoration: none;
 }
 
 .Button__icon {

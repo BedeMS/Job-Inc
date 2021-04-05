@@ -4,9 +4,9 @@ import { Link } from "react-router-dom";
 
 const NavLink = (props) => {
   return (
-    // <Link>
-      <p className={classes.NavLink}>{props.name}</p>
-    /* </Link> */
+    <Link to={props.to} className={classes.NavLink}>
+      {props.name}
+    </Link>
   );
 };
 

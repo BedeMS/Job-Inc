@@ -8,7 +8,7 @@ import classes from "./Registration.module.css";
 function Registration(props) {
   return (
     <div className={classes.Registration}>
-      <Confirmation />
+      <SignUp />
     </div>
   );
 }

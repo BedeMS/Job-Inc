@@ -8,6 +8,10 @@
   align-items: center;
 }
 
+Link {
+  text-decoration: none;
+}
+
 .Header__left {
   display: flex;
   justify-content: space-between;
