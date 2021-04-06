@@ -4,36 +4,42 @@ import SearchBar from "../SearchBar/SearchBar";
 import CompanyDetails from "./CompanyDetails/CompanyDetails";
 import JobCard from "../JobCard/JobCard";
 import JobPost from "../JobPost/JobPost";
+import uniqid from "uniqid";
 import classes from "./Company.module.css";
 
 function Company(props) {
+  const [company] = props.companies.filter(
+    (el) => el.id === props.match.params.name
+  );
+  const updatePost = (post = company.jobs[0]) => {
+    return <JobPost handleSave={props.handleSave} {...post} />
+  };
+
+  const showPost = (id) => {
+    console.log(id);
+    const job = company.jobs.filter((el) => el.id === id);
+    console.log(job)
+    updatePost(job[0]);
+  };
+
   return (
     <div className={classes.Company}>
       <Header />
       <SearchBar companies />
-      <CompanyDetails />
+      <CompanyDetails {...company} handleFollow={props.handleFollow} />
       <h1 className={classes.Company__jobs__title}>Company Job Listings</h1>
       <div className={classes.Company__jobs}>
         <div className={classes.Company__joblistings}>
-          <JobCard />
-          <JobCard />
-          <JobCard />
-          <JobCard />
-          <JobCard />
-          <JobCard />
-          <JobCard />
-          <JobCard />
-          <JobCard />
-          <JobCard />
-          <JobCard />
-          <JobCard />
-          <JobCard />
-          <JobCard />
-          <JobCard />
-          <JobCard />
-          <JobCard />
+          {company.jobs.map((el) => (
+            <JobCard
+              {...el}
+              key={uniqid()}
+              handleSave={props.handleSave}
+              showPost={showPost}
+            />
+          ))}
         </div>
-        <JobPost />
+        {updatePost()}
       </div>
     </div>
   );

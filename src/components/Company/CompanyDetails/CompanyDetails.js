@@ -9,36 +9,22 @@ import CompanyDescription from "../CompanyDescription/CompanyDescription";
 function CompanyDetails(props) {
   return (
     <div className={classes.CompanyDetails}>
-      <img className={classes.CompanyDetails__banner} src={banner} />
+      {props.banner ? <img className={classes.CompanyDetails__banner} src={props.banner} /> : ""}
       <div className={classes.CompanyDetails__header}>
         <div className={classes.CompanyDetails__header__logo}>
-          <CompanyLogo />
+          <CompanyLogo logo={props.logo} />
         </div>
-        <h1 className={classes.CompanyDetails__header__title}>
-          TD Canada Trust
-        </h1>
-        <FollowButton />
+        <h1 className={classes.CompanyDetails__header__title}>{props.name}</h1>
+        <FollowButton
+          id={props.id}
+          follow={props.follow}
+          handleFollow={props.handleFollow}
+        />
       </div>
       {/* loop through the companies info given and display it. */}
       {/* call the component with the array passed down */}
       <CompanyInfo
-        info={[
-          { Website: "www.td.com" },
-          { Headquarters: "Toronto, Ontario" },
-          {
-            socialMedia: [
-              { facebook: "www.facebook.com" },
-              { instagram: "www.instagram.com" },
-              { linkedin: "www.instagram.com" },
-              { facebook: "www.facebook.com" },
-              { instagram: "www.instagram.com" },
-              { linkedin: "www.instagram.com" },
-            ],
-          },
-          { Headquarters: "Toronto, Ontario" },
-          { Headquarters: "Toronto, Ontario" },
-          { Headquarters: "Toronto, Ontario" },
-        ]}
+        info={props.info}
       />
       <CompanyDescription />
     </div>

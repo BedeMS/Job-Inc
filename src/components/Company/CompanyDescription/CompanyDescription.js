@@ -4,7 +4,7 @@ import classes from "./CompanyDescription.module.css";
 function CompanyDescription(props) {
   return ( 
     <div className={classes.CompanyDescription}>
-      <p className={classes.CompanyDescription__label}>About TD</p>
+      <p className={classes.CompanyDescription__label}>About Us</p>
       <p className={classes.CompanyDescription__desc}>
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum ratione
         tempora facere asperiores adipisci tempore perspiciatis consequuntur.

@@ -3,13 +3,17 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import classes from "./FollowButton.module.css";
 
 const FollowButton = (props) => {
+  const handleClick = () => {
+    props.handleFollow(props.id)
+  }
   return (
     <div
       className={
-        props.followed ? classes.FollowButton__followed : classes.FollowButton
+        props.follow ? classes.FollowButton__followed : classes.FollowButton
       }
+      onClick={handleClick}
     >
-      {props.followed ? (
+      {props.follow ? (
         <FontAwesomeIcon
           icon={["far", "thumbs-up"]}
           className={classes.FollowButton__name}

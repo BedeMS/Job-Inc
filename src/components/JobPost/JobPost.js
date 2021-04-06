@@ -5,20 +5,25 @@ import SaveButton from "../../elements/SaveButton/SaveButton";
 import JobDesc from "./JobDesc/JobDesc";
 
 function JobPost(props) {
+  console.log(props);
   return (
     <div className={classes.JobPost}>
       <div className={classes.JobPost__header}>
-        <p className={classes.JobPost__header_title}>Job Title</p>
+        <p className={classes.JobPost__header_title}>{props.title}</p>
         <div className={classes.JobPost__header_div}>
-          <p className={classes.JobPost__header_company}>Company</p>
-          <p className={classes.JobPost__header_loc}>Location</p>
+          <p className={classes.JobPost__header_company}>{props.company}</p>
+          <p className={classes.JobPost__header_loc}>{props.location}</p>
           <div className={classes.JobPost__header_buttons}>
             <Button name="Apply" />
-            <SaveButton />
+            <SaveButton
+              saved={props.saved}
+              handleSave={props.handleSave}
+              id={props.id}
+            />
           </div>
         </div>
       </div>
-      <JobDesc  className={classes.JobDesc}/>
+      <JobDesc sections={props.sections} />
       {/* <div className={classes.JobPost__desc}>
 
     </div> */}

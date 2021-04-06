@@ -3,6 +3,7 @@
   margin: 4rem auto 0;
   height: 80%;
   overflow-y: scroll;
+  color: #000000;
 }
 
 .JobDesc ul {
@@ -17,6 +18,8 @@
 
 .JobDesc p {
   margin: 3rem 0;
+  line-height: 1.8;
+  color: #000000;
 }
 
 .JobDesc p,

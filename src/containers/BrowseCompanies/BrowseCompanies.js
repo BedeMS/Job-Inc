@@ -3,10 +3,12 @@ import Header from "../../components/Header/Header";
 import SearchBar from "../../components/SearchBar/SearchBar";
 import Feature from "../../elements/Feature/Feature";
 import CompanyFeature from "../../components/CompanyFeature/CompanyFeature";
+import uniqid from "uniqid";
 import classes from "./BrowseCompanies.module.css";
 
-class Home extends Component {
+class BrowseCompanies extends Component {
   render() {
+    const { featuredCompanies, handleFollow } = this.props;
     return (
       <div className={classes.Browse}>
         <Header />
@@ -16,18 +18,14 @@ class Home extends Component {
             title="Top Companies"
             className={classes.Browse__features__top}
           >
-            <CompanyFeature followed />
-            <CompanyFeature />
+            {featuredCompanies.map((el) => (
+              <CompanyFeature key={uniqid()} {...el} handleFollow={handleFollow} />
+            ))}
           </Feature>
           <Feature title="Companies for You">
-            <CompanyFeature />
-            <CompanyFeature />
-            <CompanyFeature followed />
-            <CompanyFeature />
-            <CompanyFeature />
-            <CompanyFeature />
-            <CompanyFeature followed />
-            <CompanyFeature />
+            {featuredCompanies.map((el) => (
+              <CompanyFeature key={uniqid()} {...el} handleFollow={handleFollow} />
+            ))}
           </Feature>
         </div>
       </div>
@@ -35,4 +33,4 @@ class Home extends Component {
   }
 }
 
-export default Home;
+export default BrowseCompanies;

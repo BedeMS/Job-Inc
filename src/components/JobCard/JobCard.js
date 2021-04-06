@@ -3,15 +3,34 @@ import classes from "./JobCard.module.css";
 import SaveButton from "../../elements/SaveButton/SaveButton";
 import PostedDate from "./PostedDate/PostedDate";
 import ModifyButton from "../../elements/ModifyButton/ModifyButton";
+import dayjs from "dayjs";
+import relativeTime from "dayjs/plugin/relativeTime";
+
+dayjs.extend(relativeTime);
 
 function JobCard(props) {
-  const date = new Date().toLocaleDateString();
-  return props.employer ? (
+  const handleClick = (e) => {
+    if (e.target.closest("#card")) {
+      props.showPost(props.id);
+    }
+  };
+  return (
     <div className={classes.JobCard}>
-      <div className={classes.JobCard__post}>
-        <p className={classes.JobCard__post_title}>Job Title</p>
-        <p className={classes.JobCard__post_company}>Company</p>
-        <p className={classes.JobCard__post_pay}>$100,000 - $150,000</p>
+      {props.employer ? (
+        ""
+      ) : (
+        <SaveButton
+          saved={props.saved}
+          handleSave={props.handleSave}
+          id={props.id}
+        />
+      )}
+      <div className={classes.JobCard__post} id={"card"} onClick={handleClick}>
+        <p className={classes.JobCard__post_title}>{props.title}</p>
+        <p className={classes.JobCard__post_company}>{props.company}</p>
+        <p className={classes.JobCard__post_pay}>
+          {props.pay ? props.pay : ""}
+        </p>
         <p className={classes.JobCard__post_desc}>
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laboriosam,
           totam eum. Asperiores, temporibus esse! Exercitationem laborum
@@ -20,32 +39,17 @@ function JobCard(props) {
         </p>
         <div className={classes.JobCard__post_loc}>
           <p>Toronto, Ontario</p>
-          <PostedDate date={date} />
+          <PostedDate date={dayjs().to(props.date)} />
         </div>
       </div>
+      {props.employer ? (
         <div className={classes.JobCard__modify}>
           <ModifyButton type="edit" />
           <ModifyButton />
         </div>
-    </div>
-  ) : (
-    <div className={classes.JobCard}>
-      <SaveButton />
-      <div className={classes.JobCard__post}>
-        <p className={classes.JobCard__post_title}>Job Title</p>
-        <p className={classes.JobCard__post_company}>Company</p>
-        <p className={classes.JobCard__post_pay}>$100,000 - $150,000</p>
-        <p className={classes.JobCard__post_desc}>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laboriosam,
-          totam eum. Asperiores, temporibus esse! Exercitationem laborum
-          assumenda nisi sed porro fugit aut quis ducimus omnis perferendis. Et
-          deserunt consequuntur repudiandae?
-        </p>
-        <div className={classes.JobCard__post_loc}>
-          <p>Toronto, Ontario</p>
-          <PostedDate date={date} />
-        </div>
-      </div>
+      ) : (
+        ""
+      )}
     </div>
   );
 }

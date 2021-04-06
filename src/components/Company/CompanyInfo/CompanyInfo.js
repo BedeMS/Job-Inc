@@ -32,10 +32,10 @@ function Info(props) {
   };
 
   const companyInfo = props.info.map((el, ind) => {
-    if (Object.keys(el)[0] === "Website") {
+    if (Object.keys(el)[0] === "website") {
       return (
         <div className={classes.Info}>
-          <p className={classes.Info__label}>Website</p>
+          <p className={classes.Info__label}>website</p>
           {/* change to link */}
           <p className={classes.Info__website}>{Object.values(el)[0]}</p>
         </div>
@@ -44,7 +44,7 @@ function Info(props) {
       //Generate each  icon based on data provided by employer
       return (
         <div className={classes.Info}>
-          <p className={classes.Info__label}>Follow Us</p>
+          <p className={classes.Info__label}>follow us</p>
           {Object.values(el)[0].map((sm, i) => {
             return <div>{socialMedia[Object.keys(sm)[0]]}</div>;
           })}

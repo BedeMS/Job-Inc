@@ -1,8 +1,7 @@
 import React from "react";
 
 function PostedDate(props) {
-  const today = new Date().toLocaleDateString();
-  return <p>{today}</p>;
+  return <p>{props.date}</p>;
 }
 
 export default PostedDate;
