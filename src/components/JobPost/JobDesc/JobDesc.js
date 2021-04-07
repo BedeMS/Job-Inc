@@ -1,12 +1,13 @@
 import React from "react";
 import classes from "./JobDesc.module.css";
+import uniqid from "uniqid";
 
 function JobDesc(props) {
-  console.log(props.sections)
+  // console.log(props.sections)
   return (
     <div className={classes.JobDesc}>
       {props.sections.map((el) => (
-        <div className={classes.JobDesc__section}>
+        <div className={classes.JobDesc__section} key={uniqid()}>
           <h1>{el.title}</h1>
           <p>{el.description}</p>
         </div>

@@ -1,5 +1,5 @@
 import { Component } from "react";
-import employerData from "../../data/data";
+import employerData, { createJobs, featuredArr } from "../../data/data";
 import JobListings from "../JobListings/JobListings";
 import Home from "../Home/Home";
 import Auth from "../Auth/Auth";
@@ -20,24 +20,31 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      featuredJobs: employerData.featuredJobs,
-      featuredCompanies: employerData.featuredCompanies,
-      jobs: employerData.jobs,
       companies: employerData.companies,
     };
     this.handleSave = this.handleSave.bind(this);
     this.handleFollow = this.handleFollow.bind(this);
+    this.jobs = createJobs(employerData.companies);
+    this.featuredJobs = featuredArr(this.jobs);
   }
 
   handleSave(id) {
-    const newData = this.state.featuredJobs.map((el) => {
-      if (el.id === id) {
-        return { ...el, saved: !el.saved };
-      }
+    const newData = this.state.companies.map((el) => {
+      el.jobs = el.jobs.map((el) =>
+        el.id === id ? { ...el, saved: !el.saved } : el
+      );
       return el;
     });
-    this.setState({ featuredJobs: newData });
+    // this.jobs = createJobs(employerData.companies);
+    this.jobs = this.jobs.map((el) =>
+      el.id === id ? { ...el, saved: !el.saved } : el
+    );
+    this.featuredJobs = this.featuredJobs.map((el) =>
+      el.id === id ? { ...el, saved: !el.saved } : el
+    );
+    this.setState({ companies: newData });
   }
+
   handleFollow(id) {
     const newData = this.state.companies.map((el) => {
       if (el.id === id) {
@@ -49,14 +56,14 @@ class App extends Component {
   }
 
   render() {
-    const { featuredJobs, featuredCompanies, companies, jobs } = this.state;
+    const { companies } = this.state;
     return (
       <Switch>
         <Route
           exact
           path="/"
           render={() => (
-            <Home featured={featuredJobs} handleSave={this.handleSave} />
+            <Home featured={this.featuredJobs} handleSave={this.handleSave} />
           )}
         />
         <Route exact path="/employers" render={() => <Dashboard />} />
@@ -83,7 +90,17 @@ class App extends Component {
           )}
         />
         <Route exact path="/auth" render={() => <Auth />} />
-        <Route exact path="/jobs" render={() => <JobListings />} />
+        <Route
+          exact
+          path="/jobs/:id"
+          render={(routeprops) => (
+            <JobListings
+              {...routeprops}
+              jobs={this.jobs}
+              handleSave={this.handleSave}
+            />
+          )}
+        />
         <Route render={() => <NotFound />} />
       </Switch>
     );

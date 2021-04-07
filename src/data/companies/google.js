@@ -25,7 +25,7 @@ export default {
     { industry: "Investment" },
   ],
   jobs: [
-    {
+    { 
       title: "Law Clerk",
       location: "London, UK",
       type: "Full Time",

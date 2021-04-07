@@ -11,7 +11,7 @@ const Button = (props) => {
     ) : props.link ? (
       <Link to={props.to} className={"Button__link"}>
         {props.name}
-      </Link>
+      </Link> 
     ) : (
       <p className={"Button__name"}>{props.name}</p>
     );

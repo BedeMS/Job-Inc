@@ -2,7 +2,6 @@ import React from "react";
 import CompanyLogo from "../../elements/CompanyLogo/CompanyLogo";
 import SaveButton from "../../elements/SaveButton/SaveButton";
 import { Link } from "react-router-dom";
-import useToggleHook from "../../hooks/useToggleHook";
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
 import classes from "./JobFeature.module.css";
@@ -16,7 +15,7 @@ function JobFeature(props) {
       </div>
       <div className={classes.JobFeature__info}>
         <Link to={`/companies/${props.companyId}`}className={classes.JobFeature__title}>{props.company}</Link>
-        <Link className={classes.JobFeature__company}>{props.title}</Link>
+        <Link to={`/jobs/${props.id}`} className={classes.JobFeature__company}>{props.title}</Link>
         <p className={classes.JobFeature__location}>{props.location}</p>
       </div>
       <div className={classes.JobFeature__time}>

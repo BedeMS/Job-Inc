@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import Header from "../Header/Header";
 import SearchBar from "../SearchBar/SearchBar";
 import CompanyDetails from "./CompanyDetails/CompanyDetails";
@@ -11,15 +11,13 @@ function Company(props) {
   const [company] = props.companies.filter(
     (el) => el.id === props.match.params.name
   );
-  const updatePost = (post = company.jobs[0]) => {
-    return <JobPost handleSave={props.handleSave} {...post} />
-  };
+  // console.log(company)
+
+  const [post, setPost] = useState(company.jobs[0]);
 
   const showPost = (id) => {
-    console.log(id);
-    const job = company.jobs.filter((el) => el.id === id);
-    console.log(job)
-    updatePost(job[0]);
+    const [job] = company.jobs.filter((el) => el.id === id);
+    setPost(job);
   };
 
   return (
@@ -39,7 +37,7 @@ function Company(props) {
             />
           ))}
         </div>
-        {updatePost()}
+        <JobPost handleSave={props.handleSave} {...post} />
       </div>
     </div>
   );

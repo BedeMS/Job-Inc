@@ -5,7 +5,6 @@ import SaveButton from "../../elements/SaveButton/SaveButton";
 import JobDesc from "./JobDesc/JobDesc";
 
 function JobPost(props) {
-  console.log(props);
   return (
     <div className={classes.JobPost}>
       <div className={classes.JobPost__header}>
@@ -24,9 +23,7 @@ function JobPost(props) {
         </div>
       </div>
       <JobDesc sections={props.sections} />
-      {/* <div className={classes.JobPost__desc}>
 
-    </div> */}
     </div>
   );
 }

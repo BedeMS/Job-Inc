@@ -16,7 +16,7 @@ function CompanyFeature(props) {
         <p className={classes.CompanyFeature__location}>{props.location}</p>
       </div>
       <div className={classes.CompanyFeature__buttons}>
-        <Button name="Jobs" colorScheme="light" height="short" />
+        <Button link to={`/companies/${props.id}`} name="Jobs" height="short" />
         <FollowButton
           follow={props.follow}
           id={props.id}
