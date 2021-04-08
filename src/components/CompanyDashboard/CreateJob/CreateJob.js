@@ -9,24 +9,21 @@ import ModifyButton from "../../../elements/ModifyButton/ModifyButton";
 function CreateJob(props) {
   return (
     <div className={classes.CreateJob}>
-      <Input label="Job Title" name="jobTitle" colorScheme="dark" />
-      <Input label="Location" name="location" colorScheme="dark" />
-      <Input label="Job Type" name="type" colorScheme="dark" />
+      <Input label="Job Title" placeholder="Customer Service" name="jobTitle" colorScheme="dark" />
+      <Input label="Location" placeholder="Toronto, ON" name="location" colorScheme="dark" />
+      {/* <Input label="Job Type" placeholder="Customer Service" name="type" colorScheme="dark" /> */}
+      <Select label="Job Type" options={["Full Time", "Part Time", "On Call"]} values={["Full Time", "Part Time", "On Call"]} />
       <div className={classes.Wrapper}>
-        <Input placeholder="Ex: Job Description" />
-        <Textarea />
+        <Input placeholder="Ex: Job Description" name="title" />
+        <Textarea name="description" />
       </div>
       <div className={classes.Wrapper}>
-        <Input placeholder="Ex: Salary/Responsibilities" />
-        <Textarea />
+        <Input placeholder="Ex: Salary/Responsibilities" name="title" />
+        <Textarea name="description" />
       </div>
       <div className={classes.Wrapper}>
-        <Input placeholder="Ex: What we offer" />
-        <Textarea />
-      </div>
-      <div className={classes.Wrapper}>
-        <Input placeholder="Ex: Qualifications/Benefits" />
-        <Textarea />
+        <Input placeholder="Ex: What we offer" name="title" />
+        <Textarea name="description"/>
       </div>
       <div className={classes.Wrapper}>
         <Button name="Add Section" height="short" colorScheme="light" />

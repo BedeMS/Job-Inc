@@ -14,8 +14,8 @@ function JobFeature(props) {
         <CompanyLogo logo={props.logo}/>
       </div>
       <div className={classes.JobFeature__info}>
-        <Link to={`/companies/${props.companyId}`}className={classes.JobFeature__title}>{props.company}</Link>
         <Link to={`/jobs/${props.id}`} className={classes.JobFeature__company}>{props.title}</Link>
+        <Link to={`/companies/${props.companyId}`}className={classes.JobFeature__title}>{props.company}</Link>
         <p className={classes.JobFeature__location}>{props.location}</p>
       </div>
       <div className={classes.JobFeature__time}>

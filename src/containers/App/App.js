@@ -66,7 +66,11 @@ class App extends Component {
             <Home featured={this.featuredJobs} handleSave={this.handleSave} />
           )}
         />
-        <Route exact path="/employers" render={() => <Dashboard />} />
+        <Route
+          exact
+          path="/employers"
+          render={(routeprops) => <Dashboard {...routeprops} />}
+        />
         <Route
           exact
           path="/companies"

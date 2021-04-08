@@ -1,6 +1,7 @@
 .SelectWrapper {
   display: flex;
   align-items: center;
+  justify-content: center;
   margin-right: 5rem;
   margin-bottom: 2rem;
   width: 80%;
