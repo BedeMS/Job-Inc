@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import uniqid from "uniqid";
 import Header from "../../components/Header/Header";
 import Tab from "../../elements/Tab/Tab";
 import classes from "./Dashboard.module.css";
@@ -37,7 +38,7 @@ const Dashboard = function (props) {
   };
 
   const tabs = profile.map((el, i) => (
-    <Tab active={tab === el} name={el} display={displayTab} />
+    <Tab key={uniqid()} active={tab === el} name={el} display={displayTab} />
   ));
 
   return (

@@ -1,37 +1,76 @@
-import React from "react";
+import React, { useState } from "react";
+import uniqid from "uniqid";
+import useInput from "../../../hooks/useInputHook";
+import useJobHook from "../../../hooks/useJobHook";
 import classes from "./CreateJob.module.css";
 import Input from "../../../elements/Input/Input";
-import Textarea from "../../../elements/Textarea/Textarea";
 import Select from "../../../elements/Select/Select";
 import Button from "../../../elements/Button/Button";
-import ModifyButton from "../../../elements/ModifyButton/ModifyButton";
+import Wrapper from "./Wrapper/Wrapper";
 
 function CreateJob(props) {
+  const jobInit = {
+    date: new Date().toLocaleDateString(),
+    saved: false,
+    id: uniqid(),
+    jobTitle: "",
+    location: "",
+    jobType: "",
+    section: [],
+  };
+  const [numWrapper, setnumWrapper] = useState(2);
+  const [job, handleChange] = useJobHook(jobInit);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(job);
+  };
+
   return (
-    <div className={classes.CreateJob}>
-      <Input label="Job Title" placeholder="Customer Service" name="jobTitle" colorScheme="dark" />
-      <Input label="Location" placeholder="Toronto, ON" name="location" colorScheme="dark" />
-      {/* <Input label="Job Type" placeholder="Customer Service" name="type" colorScheme="dark" /> */}
-      <Select label="Job Type" options={["Full Time", "Part Time", "On Call"]} values={["Full Time", "Part Time", "On Call"]} />
+    <form className={classes.CreateJob} onSubmit={handleSubmit}>
+      <Input
+        label="Job Title"
+        placeholder="Customer Service"
+        name="jobTitle"
+        colorScheme="dark"
+        handleChange={handleChange}
+        value={job.jobTitle}
+      />
+      <Input
+        label="Location"
+        placeholder="Toronto, ON"
+        name="location"
+        colorScheme="dark"
+        handleChange={handleChange}
+        value={job.location}
+      />
+      <Select
+        label="Job Type"
+        name="jobType"
+        options={["Full Time", "Part Time", "On Call"]}
+        values={["Full Time", "Part Time", "On Call"]}
+        handleChange={handleChange}
+        value={job.jobType}
+      />
+
+      {Array(numWrapper)
+        .fill()
+        .map((el) => {
+          return <Wrapper key={uniqid()} />;
+        })}
+
       <div className={classes.Wrapper}>
-        <Input placeholder="Ex: Job Description" name="title" />
-        <Textarea name="description" />
+        <Button
+          name="Add Section"
+          height="short"
+          colorScheme="light"
+          handleClick={() => setnumWrapper(numWrapper + 1)}
+        />
       </div>
       <div className={classes.Wrapper}>
-        <Input placeholder="Ex: Salary/Responsibilities" name="title" />
-        <Textarea name="description" />
+        <button className={classes.button} type="submit">Submit</button>
       </div>
-      <div className={classes.Wrapper}>
-        <Input placeholder="Ex: What we offer" name="title" />
-        <Textarea name="description"/>
-      </div>
-      <div className={classes.Wrapper}>
-        <Button name="Add Section" height="short" colorScheme="light" />
-      </div>
-      <div className={classes.Wrapper}>
-        <Button name="Submit" />
-      </div>
-    </div>
+    </form>
   );
 }
 

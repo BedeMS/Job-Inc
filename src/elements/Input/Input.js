@@ -2,6 +2,7 @@ import React from "react";
 import classes from "./Input.module.css";
 
 function Input(props) {
+
   return (
     <div className={classes.InputWrapper}>
       {props.label ? (
@@ -22,6 +23,7 @@ function Input(props) {
         id={props.name}
         name={props.name}
         placeholder={props.placeholder}
+        onChange={props.handleChange}
         value={props.value}
       />
     </div>

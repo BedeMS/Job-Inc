@@ -13,7 +13,7 @@ const Button = (props) => {
         {props.name}
       </Link> 
     ) : (
-      <p className={"Button__name"}>{props.name}</p>
+      <p className={"Button__name"} onClick={props.handleClick}>{props.name}</p>
     );
 
   const button =
