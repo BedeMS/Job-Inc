@@ -4,36 +4,40 @@ import Textarea from "../../../../elements/Textarea/Textarea";
 import classes from "./Wrapper.module.css";
 
 function Wrapper(props) {
-  const [title, setTitle] = useState("");
-  const [description, setDescription] = useState("");
+  //   const [title, setTitle] = useState("");
+  //   const [description, setDescription] = useState("");
 
-  const handleChange = (e) => {
-    let { name, value } = e.target;
-    if (name === "title") {
-      setTitle(value);
-    } else {
-      setDescription(value);
-    }
-  };
+  //   const obj = {
+  //     id: props.id,
+  //     title,
+  //     description,
+  //   };
 
-  const section = {
-      title, description
-  }
+  //   const handleChange = (e) => {
+  //     let { name, value } = e.target;
+  //     if (name === "title") {
+  //       setTitle(value);
+  //     } else {
+  //       setDescription(value);
+  //     }
+  //   };
 
-  console.log(section)
+  // handleSubmit = () => {
+  //     console.log("hi");
+  // }
 
   return (
-    <div className={classes.Wrapper}>
+    <div className={`${classes.Wrapper} wrap`}>
       <Input
         placeholder="Section Title Ex: Job Description"
-        name="title"
-        handleChange={handleChange}
-        value={title}
+        name={`title${props.id}`}
+        handleChange={props.handleChange}
+        value={props.title}
       />
       <Textarea
-        name="description"
-        handleChange={handleChange}
-        value={description}
+        name={`description${props.id}`}
+        handleChange={props.handleChange}
+        value={props.description}
       />
     </div>
   );
