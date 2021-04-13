@@ -9,7 +9,7 @@ export default {
     "https://www.ibm.com/brand/systems/developer/b1db1ae501d522a1a4b49613fe07c9f1/01_8-bar-positive.svg",
   repName: "Talksj SKJdlaf",
   email: "new@ibm.com",
-  id: uniqid(),
+  id: "ibm-239482034",
   info: [
     { website: "www.google.com" },
     { headquarter: "Toronto, ON" },

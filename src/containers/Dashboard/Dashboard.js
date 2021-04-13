@@ -29,9 +29,15 @@ const Dashboard = function (props) {
     } else if (tab === "Edit Profile") {
       return <UserEditProfile />;
     } else if (tab === "Create Job Post") {
-      return <CreateJob history={props.history} setTab={setTab} handleSubmit={props.handleSubmit} />;
+      return (
+        <CreateJob
+          history={props.history}
+          setTab={setTab}
+          handleSubmit={props.handleSubmit}
+        />
+      );
     } else if (tab === "Manage Jobs") {
-      return <ManageJobs />;
+      return <ManageJobs jobs={props.company[0].jobs} />;
     } else {
       return <EditProfile />;
     }

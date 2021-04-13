@@ -9,7 +9,7 @@ export default {
     "https://upload.wikimedia.org/wikipedia/en/thumb/8/8b/TD_Canada_Trust_logo.svg/1200px-TD_Canada_Trust_logo.svg.png",
   repName: "Rara Monke",
   email: "goo@gmail.com",
-  id: uniqid(),
+  id: "td-32940823",
   info: [
     { website: "www.td.com" },
     { headquarter: "Boston, Mas" },

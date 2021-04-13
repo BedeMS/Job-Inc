@@ -8,7 +8,7 @@ export default {
   logo: "http://assets.stickpng.com/thumbs/5847f9cbcef1014c0b5e48c8.png",
   repName: "Talksj SKJdlaf",
   email: "google@gmail.com",
-  id: uniqid(),
+  id: "google-23948919283",
   info: [
     { website: "www.google.com" },
     { headquarter: "Boston, Mas" },
@@ -25,12 +25,12 @@ export default {
     { industry: "Investment" },
   ],
   jobs: [
-    { 
+    {
       title: "Law Clerk",
       location: "London, UK",
       type: "Full Time",
       date: "April 03, 2021",
-      saved: false, 
+      saved: false,
       id: uniqid(),
       sections: [
         {

@@ -38,7 +38,7 @@ function JobCard(props) {
           deserunt consequuntur repudiandae?
         </p>
         <div className={classes.JobCard__post_loc}>
-          <p>Toronto, Ontario</p>
+          <p>{props.location}</p>
           <PostedDate date={dayjs().to(props.date)} />
         </div>
       </div>

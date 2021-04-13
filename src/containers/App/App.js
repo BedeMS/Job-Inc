@@ -88,7 +88,11 @@ class App extends Component {
           exact
           path="/employers"
           render={(routeprops) => (
-            <Dashboard {...routeprops} handleSubmit={this.handleSubmit} />
+            <Dashboard
+              {...routeprops}
+              company={companies.filter(el => el.name === "Job Inc")}
+              handleSubmit={this.handleSubmit}
+            />
           )}
         />
         <Route

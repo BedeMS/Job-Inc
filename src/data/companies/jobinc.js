@@ -7,7 +7,7 @@ export default {
   logo,
   repName: "Who Knows",
   email: "assets@scotia.com",
-  id: uniqid(),
+  id: "jobinc-1230948",
   info: [
     { website: "www.jobinc.com" },
     { headquarter: "Toronto, ON" },

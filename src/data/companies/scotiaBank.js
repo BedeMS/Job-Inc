@@ -8,7 +8,7 @@ export default {
   logo: "https://yorkdale.com/wp-content/uploads/2020/04/Scotiabank-logo.png",
   repName: "Who Knows",
   email: "assets@scotia.com",
-  id: uniqid(),
+  id: "scotia-32478932",
   info: [
     { website: "www.scotia.com" },
     { headquarter: "Vancouver, BC" },

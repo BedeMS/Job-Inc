@@ -1,7 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import uniqid from "uniqid";
 import useWrapper from "../../../hooks/useWrapperHook";
-import useInput from "../../../hooks/useInputHook";
 import useJobHook from "../../../hooks/useJobHook";
 import classes from "./CreateJob.module.css";
 import Input from "../../../elements/Input/Input";
