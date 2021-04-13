@@ -24,6 +24,7 @@ class App extends Component {
     };
     this.handleSave = this.handleSave.bind(this);
     this.handleFollow = this.handleFollow.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
     this.jobs = createJobs(employerData.companies);
     this.featuredJobs = featuredArr(this.jobs);
   }
@@ -55,6 +56,23 @@ class App extends Component {
     this.setState({ companies: newData });
   }
 
+  handleSubmit(job) {
+    const newData = this.state.companies.map((el) => {
+      if (el.name === "Job Inc") {
+        job.company = el.name;
+        job.logo = el.logo;
+        job.companyId = el.id;
+        el.jobs.push(job);
+        return el;
+      }
+      return el;
+    });
+
+    console.log(newData);
+
+    this.setState({ companies: newData });
+  }
+
   render() {
     const { companies } = this.state;
     return (
@@ -69,7 +87,9 @@ class App extends Component {
         <Route
           exact
           path="/employers"
-          render={(routeprops) => <Dashboard {...routeprops} />}
+          render={(routeprops) => (
+            <Dashboard {...routeprops} handleSubmit={this.handleSubmit} />
+          )}
         />
         <Route
           exact

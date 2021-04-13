@@ -42,5 +42,17 @@ export default (initialState) => {
     ]);
   };
 
-  return [section, handleChange, addSection];
+  const clearId = () => {
+    const newarr = section.map((el) => {
+      el = {
+        id: el.id,
+        title: el[`title${el.id}`],
+        description: el[`description${el.id}`],
+      };
+      return el;
+    });
+    return newarr;
+  };
+
+  return [section, handleChange, addSection, clearId];
 };

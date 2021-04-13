@@ -14,24 +14,30 @@ function CreateJob(props) {
     date: new Date().toLocaleDateString(),
     saved: false,
     id: uniqid(),
-    jobTitle: "",
+    title: "",
     location: "",
-    jobType: "",
-    section: [],
+    type: "",
   };
-  // const [numWrapper, setnumWrapper] = useState(2);
   const [job, handleChange] = useJobHook(jobInit);
-  const [section, handleWrapperChange, addSection] = useWrapper();
+  const [section, handleWrapperChange, addSection, clearId] = useWrapper();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const newSection = clearId();
+    job.sections = newSection;
+    props.handleSubmit(job);
+    props.setTab("Manage Jobs");
+  };
 
   return (
-    <form className={classes.CreateJob}>
+    <form className={classes.CreateJob} onSubmit={handleSubmit}>
       <Input
         label="Job Title"
         placeholder="Customer Service"
-        name="jobTitle"
+        name="title"
         colorScheme="dark"
         handleChange={handleChange}
-        value={job.jobTitle}
+        value={job.title}
       />
       <Input
         label="Location"
@@ -43,11 +49,11 @@ function CreateJob(props) {
       />
       <Select
         label="Job Type"
-        name="jobType"
+        name="type"
         options={["Full Time", "Part Time", "On Call"]}
         values={["Full Time", "Part Time", "On Call"]}
         handleChange={handleChange}
-        value={job.jobType}
+        value={job.type}
       />
 
       {section.map((el) => (
@@ -78,18 +84,3 @@ function CreateJob(props) {
 }
 
 export default CreateJob;
-
-// const [section, setSection] = useState([]);
-
-// const handleSection = (obj) => {
-//   if (section.length > 0) {
-//     let updateSection = section.map((el) =>
-//       el.id !== obj.id
-//         ? el
-//         : { ...el, title: obj.title, description: obj.description }
-//     );
-//     setSection(updateSection);
-//   } else {
-//     setSection([obj]);
-//   }
-// };
