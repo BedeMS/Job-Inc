@@ -10,8 +10,12 @@ dayjs.extend(relativeTime);
 
 function JobCard(props) {
   const handleClick = (e) => {
-    if (e.target.closest("#card")) {
-      props.showPost(props.id);
+    if (props.showPost) {
+      if (e.target.closest("#card")) {
+        props.showPost(props.id);
+      }
+    } else {
+      
     }
   };
   return (

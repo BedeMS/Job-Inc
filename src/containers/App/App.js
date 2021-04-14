@@ -36,7 +36,7 @@ class App extends Component {
       );
       return el;
     });
-    // this.jobs = createJobs(employerData.companies);
+
     this.jobs = this.jobs.map((el) =>
       el.id === id ? { ...el, saved: !el.saved } : el
     );
@@ -68,10 +68,9 @@ class App extends Component {
       return el;
     });
 
-    console.log(newData);
-
     this.setState({ companies: newData });
   }
+
 
   render() {
     const { companies } = this.state;
