@@ -14,20 +14,21 @@ import { fab } from "@fortawesome/free-brands-svg-icons";
 import { fas, faBookmark } from "@fortawesome/free-solid-svg-icons";
 import "./App.css";
 
-library.add(far, fab, fas, faBookmark);
+library.add(far, fab, fas, faBookmark); 
 
-class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      companies: employerData.companies,
-    };
-    this.handleSave = this.handleSave.bind(this);
-    this.handleFollow = this.handleFollow.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.jobs = createJobs(employerData.companies);
-    this.featuredJobs = featuredArr(this.jobs);
-  }
+function App(props) {
+  const [companies, dispatch] = useReducer(reducer, employerData.companies)
+  
+  //   super(props);
+  //   this.state = {
+  //     companies: employerData.companies,
+  //   };
+  //   this.handleSave = this.handleSave.bind(this);
+  //   this.handleFollow = this.handleFollow.bind(this);
+  //   this.handleSubmit = this.handleSubmit.bind(this);
+  //   this.jobs = createJobs(employerData.companies);
+  //   this.featuredJobs = featuredArr(this.jobs);
+  // }
 
   handleSave(id) {
     const newData = this.state.companies.map((el) => {
