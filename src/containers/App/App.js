@@ -1,5 +1,5 @@
-import { Component } from "react";
-import employerData, { createJobs, featuredArr } from "../../data/data";
+// import employerData, { createJobs, featuredArr } from "../../data/data";
+import { DataProvider } from "../../context/companies.context";
 import JobListings from "../JobListings/JobListings";
 import Home from "../Home/Home";
 import Auth from "../Auth/Auth";
@@ -14,68 +14,53 @@ import { fab } from "@fortawesome/free-brands-svg-icons";
 import { fas, faBookmark } from "@fortawesome/free-solid-svg-icons";
 import "./App.css";
 
-library.add(far, fab, fas, faBookmark); 
+library.add(far, fab, fas, faBookmark);
 
 function App(props) {
-  const [companies, dispatch] = useReducer(reducer, employerData.companies)
-  
-  //   super(props);
-  //   this.state = {
-  //     companies: employerData.companies,
-  //   };
-  //   this.handleSave = this.handleSave.bind(this);
-  //   this.handleFollow = this.handleFollow.bind(this);
-  //   this.handleSubmit = this.handleSubmit.bind(this);
-  //   this.jobs = createJobs(employerData.companies);
-  //   this.featuredJobs = featuredArr(this.jobs);
+  // handleSave(id) {
+  //   const newData = this.state.companies.map((el) => {
+  //     el.jobs = el.jobs.map((el) =>
+  //       el.id === id ? { ...el, saved: !el.saved } : el
+  //     );
+  //     return el;
+  //   });
+
+  //   this.jobs = this.jobs.map((el) =>
+  //     el.id === id ? { ...el, saved: !el.saved } : el
+  //   );
+  //   this.featuredJobs = this.featuredJobs.map((el) =>
+  //     el.id === id ? { ...el, saved: !el.saved } : el
+  //   );
+  //   this.setState({ companies: newData });
   // }
 
-  handleSave(id) {
-    const newData = this.state.companies.map((el) => {
-      el.jobs = el.jobs.map((el) =>
-        el.id === id ? { ...el, saved: !el.saved } : el
-      );
-      return el;
-    });
+  // handleFollow(id) {
+  //   const newData = this.state.companies.map((el) => {
+  //     if (el.id === id) {
+  //       return { ...el, follow: !el.follow };
+  //     }
+  //     return el;
+  //   });
+  //   this.setState({ companies: newData });
+  // }
 
-    this.jobs = this.jobs.map((el) =>
-      el.id === id ? { ...el, saved: !el.saved } : el
-    );
-    this.featuredJobs = this.featuredJobs.map((el) =>
-      el.id === id ? { ...el, saved: !el.saved } : el
-    );
-    this.setState({ companies: newData });
-  }
+  // handleSubmit(job) {
+  //   const newData = this.state.companies.map((el) => {
+  //     if (el.name === "Job Inc") {
+  //       job.company = el.name;
+  //       job.logo = el.logo;
+  //       job.companyId = el.id;
+  //       el.jobs.push(job);
+  //       return el;
+  //     }
+  //     return el;
+  //   });
 
-  handleFollow(id) {
-    const newData = this.state.companies.map((el) => {
-      if (el.id === id) {
-        return { ...el, follow: !el.follow };
-      }
-      return el;
-    });
-    this.setState({ companies: newData });
-  }
+  //   this.setState({ companies: newData });
+  // }
 
-  handleSubmit(job) {
-    const newData = this.state.companies.map((el) => {
-      if (el.name === "Job Inc") {
-        job.company = el.name;
-        job.logo = el.logo;
-        job.companyId = el.id;
-        el.jobs.push(job);
-        return el;
-      }
-      return el;
-    });
-
-    this.setState({ companies: newData });
-  }
-
-
-  render() {
-    const { companies } = this.state;
-    return (
+  return (
+    <DataProvider>
       <Switch>
         <Route
           exact
@@ -90,7 +75,7 @@ function App(props) {
           render={(routeprops) => (
             <Dashboard
               {...routeprops}
-              company={companies.filter(el => el.name === "Job Inc")}
+              company={companies.filter((el) => el.name === "Job Inc")}
               handleSubmit={this.handleSubmit}
             />
           )}
@@ -131,8 +116,8 @@ function App(props) {
         />
         <Route render={() => <NotFound />} />
       </Switch>
-    );
-  }
+    </DataProvider>
+  );
 }
 
 export default App;
