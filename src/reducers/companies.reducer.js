@@ -31,7 +31,7 @@ export const reducer = (state, action) => {
           return { ...el, jobs: jobs };
         }
         return el;
-      });
+      }); 
       return newData;
 
     case "FOLLOW":

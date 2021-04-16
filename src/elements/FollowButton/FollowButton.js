@@ -1,17 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import classes from "./FollowButton.module.css";
+import { DataContext } from "../../context/companies.context";
 
 const FollowButton = (props) => {
-  const handleClick = () => {
-    props.handleFollow(props.id)
-  }
+  const { dispatch } = useContext(DataContext);
   return (
     <div
       className={
         props.follow ? classes.FollowButton__followed : classes.FollowButton
       }
-      onClick={handleClick}
+      onClick={() => dispatch({ type: "FOLLOW", id: props.id })}
     >
       {props.follow ? (
         <FontAwesomeIcon

@@ -7,7 +7,7 @@ export const DataContext = createContext();
 const initCompanies = employerData.companies;
 const initJobs = createJobs(employerData.companies);
 const initFeatured = featuredArr(initJobs);
-
+ 
 export function DataProvider(props) {
   const [companies, dispatch] = useReducer(reducer, initCompanies);
   const [jobs, setJobs] = useState([]);

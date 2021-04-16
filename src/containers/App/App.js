@@ -62,13 +62,8 @@ function App(props) {
   return (
     <DataProvider>
       <Switch>
-        <Route
-          exact
-          path="/"
-          render={() => (
-            <Home />
-          )}
-        />
+        <Route exact path="/" render={() => <Home />} />
+        <Route exact path="/companies" render={() => <BrowseCompanies />} />
         {/* <Route
           exact
           path="/employers"
@@ -77,16 +72,6 @@ function App(props) {
               {...routeprops}
               company={companies.filter((el) => el.name === "Job Inc")}
               handleSubmit={this.handleSubmit}
-            />
-          )}
-        />
-        <Route
-          exact
-          path="/companies"
-          render={() => (
-            <BrowseCompanies
-              featuredCompanies={companies}
-              handleFollow={this.handleFollow}
             />
           )}
         />
