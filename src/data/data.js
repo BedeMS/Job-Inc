@@ -2,6 +2,22 @@ import companies from "./companies/companies";
 
 // Loop through all the companies and get all the jobs
 export const createJobs = (arr) => {
+  // return new Promise((resolve) => {
+  //   setTimeout(() => {
+  //     const jobs = [];
+  //     arr.forEach((el, i) => {
+  //       if (el.jobs.length > 0) {
+  //         el.jobs.forEach((job) => {
+  //           job.company = el.name;
+  //           job.logo = el.logo;
+  //           job.companyId = el.id;
+  //           jobs.push(job);
+  //         });
+  //       }
+  //     });
+  //     resolve({ jobs });
+  //   }, 1500);
+  // });
   const jobs = [];
   arr.forEach((el, i) => {
     if (el.jobs.length > 0) {

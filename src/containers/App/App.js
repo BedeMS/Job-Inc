@@ -66,10 +66,10 @@ function App(props) {
           exact
           path="/"
           render={() => (
-            <Home featured={this.featuredJobs} handleSave={this.handleSave} />
+            <Home />
           )}
         />
-        <Route
+        {/* <Route
           exact
           path="/employers"
           render={(routeprops) => (
@@ -114,7 +114,7 @@ function App(props) {
             />
           )}
         />
-        <Route render={() => <NotFound />} />
+        <Route render={() => <NotFound />} /> */}
       </Switch>
     </DataProvider>
   );
