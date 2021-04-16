@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import classes from "./JobCard.module.css";
 import SaveButton from "../../elements/SaveButton/SaveButton";
 import PostedDate from "./PostedDate/PostedDate";
 import ModifyButton from "../../elements/ModifyButton/ModifyButton";
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
+import { DataContext } from "../../context/companies.context";
 
 dayjs.extend(relativeTime);
 
@@ -14,8 +15,6 @@ function JobCard(props) {
       if (e.target.closest("#card")) {
         props.showPost(props.id);
       }
-    } else {
-      
     }
   };
   return (
@@ -25,8 +24,8 @@ function JobCard(props) {
       ) : (
         <SaveButton
           saved={props.saved}
-          handleSave={props.handleSave}
           id={props.id}
+          companyId={props.companyId}
         />
       )}
       <div className={classes.JobCard__post} id={"card"} onClick={handleClick}>

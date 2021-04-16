@@ -64,6 +64,11 @@ function App(props) {
       <Switch>
         <Route exact path="/" render={() => <Home />} />
         <Route exact path="/companies" render={() => <BrowseCompanies />} />
+        <Route
+          exact
+          path="/companies/:name"
+          render={(routeprops) => <Company {...routeprops} />}
+        />
         {/* <Route
           exact
           path="/employers"
@@ -72,18 +77,6 @@ function App(props) {
               {...routeprops}
               company={companies.filter((el) => el.name === "Job Inc")}
               handleSubmit={this.handleSubmit}
-            />
-          )}
-        />
-        <Route
-          exact
-          path="/companies/:name"
-          render={(routeprops) => (
-            <Company
-              {...routeprops}
-              companies={companies}
-              handleFollow={this.handleFollow}
-              handleSave={this.handleSave}
             />
           )}
         />

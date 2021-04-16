@@ -16,14 +16,13 @@ function JobPost(props) {
             <Button name="Apply" />
             <SaveButton
               saved={props.saved}
-              handleSave={props.handleSave}
+              companyId={props.companyId}
               id={props.id}
             />
           </div>
         </div>
       </div>
       <JobDesc sections={props.sections} />
-
     </div>
   );
 }
