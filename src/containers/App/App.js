@@ -69,6 +69,11 @@ function App(props) {
           path="/companies/:name"
           render={(routeprops) => <Company {...routeprops} />}
         />
+        <Route
+          exact
+          path="/jobs/:id"
+          render={(routeprops) => <JobListings {...routeprops} />}
+        />
         {/* <Route
           exact
           path="/employers"
@@ -81,17 +86,6 @@ function App(props) {
           )}
         />
         <Route exact path="/auth" render={() => <Auth />} />
-        <Route
-          exact
-          path="/jobs/:id"
-          render={(routeprops) => (
-            <JobListings
-              {...routeprops}
-              jobs={this.jobs}
-              handleSave={this.handleSave}
-            />
-          )}
-        />
         <Route render={() => <NotFound />} /> */}
       </Switch>
     </DataProvider>
