@@ -11,10 +11,10 @@ export const reducer = (state, action) => {
       });
     // case "EDIT":
     //   return ;
-    case "REMOVE":
+    case "DELETE":
       return state.map((el) =>
         el.id === action.companyId
-          ? el.jobs.filter((el) => el.id !== action.id)
+          ? { ...el, jobs: el.jobs.filter((el) => el.id !== action.id) }
           : el
       );
 

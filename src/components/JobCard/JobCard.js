@@ -10,8 +10,7 @@ import { DataContext } from "../../context/companies.context";
 dayjs.extend(relativeTime);
 
 function JobCard(props) {
-
-
+  
   const handleClick = (e) => {
     if (props.showPost) {
       if (e.target.closest("#card")) {
@@ -49,8 +48,8 @@ function JobCard(props) {
       </div>
       {props.employer ? (
         <div className={classes.JobCard__modify}>
-          <ModifyButton type="edit" />
-          <ModifyButton />
+          <ModifyButton type="edit" id={props.id} companyId={props.companyId} />
+          <ModifyButton id={props.id} companyId={props.companyId} />
         </div>
       ) : (
         ""
