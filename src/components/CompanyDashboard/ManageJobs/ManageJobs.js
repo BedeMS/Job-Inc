@@ -8,20 +8,16 @@ function ManageJobs(props) {
   const { companies } = useContext(DataContext);
   let [company] = companies.filter((el) => el.name === "Job Inc");
 
-  // useEffect(() => {
-  //   company = companies.filter((el) => el.name === "Job Inc");
-  // }, [companies]);
-
-  // const showPost = (id) => {
-  //   props.history.push(`/companies/${company.id}`);
-  // };
+  const showPost = (id) => {
+    props.history.push(`/companies/${company.id}`);
+  };
 
   return (
     <div className={classes.ManageJobs}>
       {company.jobs.length === 0 ? (
         <h1>No Jobs Posts Created</h1>
       ) : (
-        company.jobs.map((el) => <JobCard employer {...el} key={uniqid()} />)
+        company.jobs.map((el) => <JobCard employer showPost={showPost} {...el} key={uniqid()} />)
       )}
     </div>
   );
