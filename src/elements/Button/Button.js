@@ -11,14 +11,15 @@ const Button = (props) => {
     ) : props.link ? (
       <Link to={props.to} className={"Button__link"}>
         {props.name}
-      </Link> 
+      </Link>
     ) : (
-      <p className={"Button__name"} onClick={props.handleClick}>{props.name}</p>
+      <p className={"Button__name"}>{props.name}</p>
     );
 
   const button =
     props.height === "short" ? (
       <div
+        onClick={props.handleClick}
         className={
           props.colorScheme === "light"
             ? "Button ButtonLight ButtonShort"
@@ -29,6 +30,7 @@ const Button = (props) => {
       </div>
     ) : (
       <div
+        onClick={props.handleClick}
         className={
           props.colorScheme === "light" ? "Button ButtonLight" : "Button"
         }

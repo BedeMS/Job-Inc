@@ -14,6 +14,7 @@ const initForm = {
 
 function SignUp(props) {
   const [values, handleChange] = useFormHook(initForm);
+  console.log(values);
   return (
     <div className={classes.SignUp}>
       <Input
