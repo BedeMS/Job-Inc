@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import uniqid from "uniqid";
 import useWrapper from "../../../hooks/useWrapperHook";
 import useJobHook from "../../../hooks/useJobHook";
@@ -7,8 +7,10 @@ import Input from "../../../elements/Input/Input";
 import Select from "../../../elements/Select/Select";
 import Button from "../../../elements/Button/Button";
 import Wrapper from "./Wrapper/Wrapper";
+import { DataContext } from "../../../context/companies.context";
 
 function CreateJob(props) {
+  const { dispatch } = useContext(DataContext);
   const jobInit = {
     date: new Date().toLocaleDateString(),
     saved: false,
@@ -24,7 +26,7 @@ function CreateJob(props) {
     e.preventDefault();
     const newSection = clearId();
     job.sections = newSection;
-    props.handleSubmit(job);
+    dispatch({type: "ADD", job: job})
     props.setTab("Manage Jobs");
   };
 

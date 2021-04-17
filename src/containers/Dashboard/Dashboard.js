@@ -33,11 +33,10 @@ const Dashboard = function (props) {
         <CreateJob
           history={props.history}
           setTab={setTab}
-          handleSubmit={props.handleSubmit}
         />
       );
     } else if (tab === "Manage Jobs") {
-      return <ManageJobs jobs={props.company[0].jobs} />;
+      return <ManageJobs history={props.history} />;
     } else {
       return <EditProfile />;
     }

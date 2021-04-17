@@ -74,17 +74,16 @@ function App(props) {
           path="/jobs/:id"
           render={(routeprops) => <JobListings {...routeprops} />}
         />
-        {/* <Route
+        <Route
           exact
           path="/employers"
           render={(routeprops) => (
             <Dashboard
               {...routeprops}
-              company={companies.filter((el) => el.name === "Job Inc")}
-              handleSubmit={this.handleSubmit}
             />
           )}
         />
+        {/* 
         <Route exact path="/auth" render={() => <Auth />} />
         <Route render={() => <NotFound />} /> */}
       </Switch>

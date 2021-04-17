@@ -10,6 +10,8 @@ import { DataContext } from "../../context/companies.context";
 dayjs.extend(relativeTime);
 
 function JobCard(props) {
+
+
   const handleClick = (e) => {
     if (props.showPost) {
       if (e.target.closest("#card")) {

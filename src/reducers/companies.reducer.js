@@ -4,9 +4,6 @@ export const reducer = (state, action) => {
     case "ADD":
       return state.map((el) => {
         if (el.name === "Job Inc") {
-          action.job.company = el.name;
-          action.job.logo = el.logo;
-          action.job.companyId = el.id;
           el.jobs.push(action.job);
           return el;
         }
@@ -31,7 +28,7 @@ export const reducer = (state, action) => {
           return { ...el, jobs: jobs };
         }
         return el;
-      }); 
+      });
       return newData;
 
     case "FOLLOW":
