@@ -5,12 +5,17 @@ import Confirmation from "./Confirmation/Confirmation";
 import EmployerSignUp from "./EmployerSignUp/EmployerSignUp";
 import classes from "./Registration.module.css";
 
-function Registration(props) {
-  return (
-    <div className={classes.Registration}>
-      <SignUp />
-    </div>
-  );
+function Registration({auth}) {
+  const displayAuth = () => {
+    if(auth === "Sign In") {
+      return <SignIn />;
+    } else if (auth === "Sign Up") {
+      return <SignUp />;
+    } else {
+      return <EmployerSignUp />;
+    }
+  };
+  return <div className={classes.Registration}>{displayAuth()}</div>;
 }
 
 export default Registration;

@@ -1,4 +1,3 @@
-// import employerData, { createJobs, featuredArr } from "../../data/data";
 import { DataProvider } from "../../context/companies.context";
 import JobListings from "../JobListings/JobListings";
 import Home from "../Home/Home";
@@ -17,48 +16,6 @@ import "./App.css";
 library.add(far, fab, fas, faBookmark);
 
 function App(props) {
-  // handleSave(id) {
-  //   const newData = this.state.companies.map((el) => {
-  //     el.jobs = el.jobs.map((el) =>
-  //       el.id === id ? { ...el, saved: !el.saved } : el
-  //     );
-  //     return el;
-  //   });
-
-  //   this.jobs = this.jobs.map((el) =>
-  //     el.id === id ? { ...el, saved: !el.saved } : el
-  //   );
-  //   this.featuredJobs = this.featuredJobs.map((el) =>
-  //     el.id === id ? { ...el, saved: !el.saved } : el
-  //   );
-  //   this.setState({ companies: newData });
-  // }
-
-  // handleFollow(id) {
-  //   const newData = this.state.companies.map((el) => {
-  //     if (el.id === id) {
-  //       return { ...el, follow: !el.follow };
-  //     }
-  //     return el;
-  //   });
-  //   this.setState({ companies: newData });
-  // }
-
-  // handleSubmit(job) {
-  //   const newData = this.state.companies.map((el) => {
-  //     if (el.name === "Job Inc") {
-  //       job.company = el.name;
-  //       job.logo = el.logo;
-  //       job.companyId = el.id;
-  //       el.jobs.push(job);
-  //       return el;
-  //     }
-  //     return el;
-  //   });
-
-  //   this.setState({ companies: newData });
-  // }
-
   return (
     <DataProvider>
       <Switch>
@@ -77,15 +34,10 @@ function App(props) {
         <Route
           exact
           path="/employers"
-          render={(routeprops) => (
-            <Dashboard
-              {...routeprops}
-            />
-          )}
+          render={(routeprops) => <Dashboard {...routeprops} />}
         />
-        {/* 
         <Route exact path="/auth" render={() => <Auth />} />
-        <Route render={() => <NotFound />} /> */}
+        <Route render={() => <NotFound />} />
       </Switch>
     </DataProvider>
   );
