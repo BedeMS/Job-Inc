@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import uniqid from "uniqid";
 import useWrapper from "../../../hooks/useWrapperHook";
-import useJobHook from "../../../hooks/useJobHook";
+import useFormHook from "../../../hooks/useFormHook";
 import classes from "./CreateJob.module.css";
 import Input from "../../../elements/Input/Input";
 import Select from "../../../elements/Select/Select";
@@ -17,9 +17,9 @@ function CreateJob(props) {
     id: uniqid(),
     title: "",
     location: "",
-    type: "",
+    type: "", 
   };
-  const [job, handleChange] = useJobHook(jobInit);
+  const [job, handleChange] = useFormHook(jobInit);
   const [section, handleWrapperChange, addSection, clearId] = useWrapper();
 
   const handleSubmit = (e) => {
