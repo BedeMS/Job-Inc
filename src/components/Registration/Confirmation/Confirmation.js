@@ -11,7 +11,7 @@ function Confirmation(props) {
           colorScheme="light"
           name="Sign In"
           to="/auth"
-          handleClick={props.confirm}
+          handleClick={props.reset}
         />
       </div>
       <p className={classes.Confirmation__message}>

@@ -1,39 +1,28 @@
 import React from "react";
 import SignIn from "./SignIn/SignIn";
 import SignUp from "./SignUp/SignUp";
-import useToggle from "../../hooks/useToggleHook";
 import Confirmation from "./Confirmation/Confirmation";
 import EmployerSignUp from "./EmployerSignUp/EmployerSignUp";
 import classes from "./Registration.module.css";
 
-function Registration({ auth }) {
-  const [submitted, toggleSubmitted] = useToggle(false);
-
+function Registration({ auth, toggleSubmit, submitted, reset }) {
   const displayAuth = () => {
     if (auth === "Sign In") {
-      return submitted ? (
-        <Confirmation confirm={confirm} />
-      ) : (
-        <SignIn confirm={confirm} />
-      );
+      return <SignIn />;
     } else if (auth === "Sign Up") {
       return submitted ? (
-        <Confirmation confirm={confirm} />
+        <Confirmation reset={reset} />
       ) : (
-        <SignUp confirm={confirm} />
+        <SignUp isSubmitted={toggleSubmit} />
       );
     } else {
       return submitted ? (
-        <Confirmation confirm={confirm} />
+        <Confirmation reset={reset} />
       ) : (
-        <EmployerSignUp confirm={confirm} />
+        <EmployerSignUp isSubmitted={toggleSubmit} />
       );
     }
   };
-
-  function confirm() {
-    toggleSubmitted();
-  }
 
   return <div className={classes.Registration}>{displayAuth()}</div>;
 }

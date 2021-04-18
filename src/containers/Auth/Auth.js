@@ -1,10 +1,13 @@
 import React, { useState } from "react";
+import useToggle from "../../hooks/useToggleHook";
 import Header from "../../components/Header/Header";
 import Registration from "../../components/Registration/Registration";
 import classes from "./Auth.module.css";
 
 function User(props) {
   const [state, setstate] = useState("Sign In");
+  const [submitted, toggleSubmitted] = useToggle(false);
+
   const handleClick = (e) => {
     if (e.target.textContent === "Sign In") {
       setstate("Sign In");
@@ -14,6 +17,12 @@ function User(props) {
       setstate("Employer Sign Up");
     }
   };
+
+  function reset() {
+    setstate("Sign In");
+    toggleSubmitted();
+  }
+
   return (
     <div className={classes.Auth}>
       <Header />
@@ -42,7 +51,12 @@ function User(props) {
           </p>
         </div>
 
-        <Registration auth={state} />
+        <Registration
+          auth={state}
+          toggleSubmit={toggleSubmitted}
+          submitted={submitted}
+          reset={reset}
+        />
       </div>
     </div>
   );

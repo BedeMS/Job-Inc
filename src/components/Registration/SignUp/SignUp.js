@@ -18,7 +18,7 @@ const initForm = {
 function SignUp(props) {
   const [values, handleChange, errors, handleSubmit] = useFormHook(
     initForm,
-    props.confirm
+    props.isSubmitted
   );
 
   return (
