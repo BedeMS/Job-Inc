@@ -7,9 +7,19 @@ export default (values) => {
     errors.fullName = "Username required";
   }
 
+  // company
+  if (Object.keys(values).includes("company")) {
+    if (!values.company.trim()) {
+      errors.company = "Company Name is required";
+    }
+  }
+
   // username
-  if (!values.username.trim()) {
-    errors.username = "Username required";
+  // console.log(Object.keys(values))
+  if (Object.keys(values).includes("username")) {
+    if (!values.username.trim()) {
+      errors.username = "Username required";
+    }
   }
 
   // email
