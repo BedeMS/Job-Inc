@@ -1,8 +1,11 @@
 import React from "react";
 import classes from "./SignUp.module.css";
 import Input from "../../../elements/Input/Input";
+import Error from "../../../elements/Error/Error";
 import Button from "../../../elements/Button/Button";
 import useFormHook from "../../../hooks/useFormHook";
+import useToggleHook from "../../../hooks/useToggleHook";
+import validate from "../../../validateForm/userFormValidation";
 
 const initForm = {
   fullName: "",
@@ -13,10 +16,13 @@ const initForm = {
 };
 
 function SignUp(props) {
-  const [values, handleChange] = useFormHook(initForm);
-  console.log(values);
+  const [values, handleChange, errors, handleSubmit] = useFormHook(
+    initForm,
+    props.confirm
+  );
+
   return (
-    <div className={classes.SignUp}>
+    <form className={classes.SignUp} onSubmit={handleSubmit}>
       <Input
         label="full Name"
         name="fullName"
@@ -24,6 +30,7 @@ function SignUp(props) {
         handleChange={handleChange}
         colorScheme="dark"
       />
+      {errors.fullName && <Error error={errors.fullName} />}
       <Input
         label="username"
         name="username"
@@ -31,6 +38,8 @@ function SignUp(props) {
         handleChange={handleChange}
         colorScheme="dark"
       />
+      {errors.username && <Error error={errors.username} />}
+
       <Input
         label="email"
         name="email"
@@ -39,6 +48,8 @@ function SignUp(props) {
         type="email"
         colorScheme="dark"
       />
+      {errors.email && <Error error={errors.email} />}
+
       <Input
         label="password"
         name="password"
@@ -47,6 +58,8 @@ function SignUp(props) {
         type="password"
         colorScheme="dark"
       />
+      {errors.password && <Error error={errors.password} />}
+
       <Input
         label="confirm password"
         name="password2"
@@ -55,8 +68,11 @@ function SignUp(props) {
         type="password"
         colorScheme="dark"
       />
-      <Button name="Sign Up" colorScheme="light" />
-    </div>
+      {errors.password2 && <Error error={errors.password2} />}
+
+      <button type="submit">Sign Up</button>
+      {/* <Button name="Sign Up" colorScheme="light" /> */}
+    </form>
   );
 }
 

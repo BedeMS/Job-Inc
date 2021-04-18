@@ -2,6 +2,11 @@
 export default (values) => {
   let errors = {};
 
+  // fullName
+  if (!values.fullName.trim()) {
+    errors.fullName = "Username required";
+  }
+
   // username
   if (!values.username.trim()) {
     errors.username = "Username required";
