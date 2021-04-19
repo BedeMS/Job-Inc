@@ -2,7 +2,7 @@ import React from "react";
 import classes from "./SignUp.module.css";
 import Input from "../../../elements/Input/Input";
 import Error from "../../../elements/Error/Error";
-import Button from "../../../elements/Button/Button";
+import Submit from "../../../elements/Button/Submit/Submit";
 import useFormHook from "../../../hooks/useFormHook";
 import useToggleHook from "../../../hooks/useToggleHook";
 import validate from "../../../validateForm/userFormValidation";
@@ -69,9 +69,7 @@ function SignUp(props) {
         colorScheme="dark"
       />
       {errors.password2 && <Error error={errors.password2} />}
-
-      <button type="submit">Sign Up</button>
-      {/* <Button name="Sign Up" colorScheme="light" /> */}
+      <Submit name="Submit" />
     </form>
   );
 }

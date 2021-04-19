@@ -6,6 +6,7 @@ import classes from "./CreateJob.module.css";
 import Input from "../../../elements/Input/Input";
 import Select from "../../../elements/Select/Select";
 import Button from "../../../elements/Button/Button";
+import Submit from "../../../elements/Button/Submit/Submit";
 import Wrapper from "./Wrapper/Wrapper";
 import { DataContext } from "../../../context/companies.context";
 
@@ -17,7 +18,7 @@ function CreateJob(props) {
     id: uniqid(),
     title: "",
     location: "",
-    type: "", 
+    type: "",
   };
   const [job, handleChange] = useFormHook(jobInit);
   const [section, handleWrapperChange, addSection, clearId] = useWrapper();
@@ -26,7 +27,7 @@ function CreateJob(props) {
     e.preventDefault();
     const newSection = clearId();
     job.sections = newSection;
-    dispatch({type: "ADD", job: job})
+    dispatch({ type: "ADD", job: job });
     props.setTab("Manage Jobs");
   };
 
@@ -76,9 +77,7 @@ function CreateJob(props) {
         />
       </div>
       <div className={classes.Wrapper}>
-        <button className={classes.button} type="submit">
-          Submit
-        </button>
+        <Submit name="Submit" />
       </div>
     </form>
   );

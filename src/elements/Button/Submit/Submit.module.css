@@ -1,0 +1,21 @@
+.Submit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 2rem;
+  height: 6rem;
+  border-radius: 42px;
+  border: none;
+  font-size: 2rem;
+  font-family: "Bodoni Moda", serif;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in;
+  outline: none;
+}
+
+.light {
+  color: #0e30a7;
+  border: 0.5px solid #0e30a7;
+  transition: background-color 0.1s ease-in;
+  background-color: #ffffff;
+}
