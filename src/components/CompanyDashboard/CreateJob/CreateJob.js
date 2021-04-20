@@ -42,7 +42,7 @@ function CreateJob(props) {
       props.setTab("Manage Jobs");
     }
   };
-
+ 
   return (
     <form className={classes.CreateJob} onSubmit={handleSubmit}>
       <Input

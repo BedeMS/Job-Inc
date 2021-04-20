@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useState } from "react";
 import classes from "./ManageJobs.module.css";
 import JobCard from "../../JobCard/JobCard";
 import EditJob from "../EditJob/EditJob";
@@ -9,7 +9,7 @@ import useToggleHook from "../../../hooks/useToggleHook";
 function ManageJobs(props) {
   const { companies } = useContext(DataContext);
   let [company] = companies.filter((el) => el.name === "Job Inc");
-  let job;
+  const [job, setJob] = useState({});
   const [isEditing, toggle] = useToggleHook(false);
 
   const showPost = (id) => {
@@ -17,14 +17,16 @@ function ManageJobs(props) {
   };
 
   const handleEdit = function (id) {
+    setJob(company.jobs.filter((el) => el.id === id));
     toggle();
-    job = company.jobs.filter((el) => el.id === id);
+    // console.log(job);
+    // [job] = company.jobs.filter((el) => el.id === id);
   };
 
   return (
     <div className={classes.ManageJobs}>
       {isEditing ? (
-        <EditJob {...job} />
+        <EditJob job={job[0]} />
       ) : company.jobs.length === 0 ? (
         <h1>No Jobs Posts Created</h1>
       ) : (
