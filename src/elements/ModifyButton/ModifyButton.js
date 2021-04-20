@@ -6,14 +6,13 @@ import { DataContext } from "../../context/companies.context";
 function ModifyButton(props) {
   const { dispatch } = useContext(DataContext);
 
+  function handleClick(){
+    props.handleEdit(props.id)
+  }
+
   const buttonPick =
     props.type === "edit" ? (
-      <div
-        className={classes.EditButton}
-        onClick={() =>
-          dispatch({ type: "EDIT", companyId: props.companyId, id: props.id })
-        }
-      >
+      <div className={classes.EditButton} onClick={handleClick}>
         <FontAwesomeIcon
           icon={["far", "edit"]}
           className={classes.Button__icon}

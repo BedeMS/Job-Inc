@@ -48,13 +48,13 @@ function JobCard(props) {
       </div>
       {props.employer ? (
         <div className={classes.JobCard__modify}>
-          <ModifyButton type="edit" id={props.id} companyId={props.companyId} />
+          <ModifyButton type="edit" id={props.id} companyId={props.companyId} handleEdit={props.handleEdit} />
           <ModifyButton id={props.id} companyId={props.companyId} />
         </div>
       ) : (
         ""
       )}
-    </div>
+    </div> 
   );
 }
 
