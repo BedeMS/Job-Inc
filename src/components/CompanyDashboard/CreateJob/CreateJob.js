@@ -1,10 +1,15 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import uniqid from "uniqid";
 import useWrapper from "../../../hooks/useWrapperHook";
+import {
+  checkRequired,
+  checkSection,
+} from "../../../validateForm/jobFormValidation";
 import useFormHook from "../../../hooks/useFormHook";
 import classes from "./CreateJob.module.css";
 import Input from "../../../elements/Input/Input";
 import Select from "../../../elements/Select/Select";
+import Error from "../../../elements/Error/Error";
 import Button from "../../../elements/Button/Button";
 import Submit from "../../../elements/Button/Submit/Submit";
 import Wrapper from "./Wrapper/Wrapper";
@@ -22,13 +27,20 @@ function CreateJob(props) {
   };
   const [job, handleChange] = useFormHook(jobInit);
   const [section, handleWrapperChange, addSection, clearId] = useWrapper();
+  const [errors, setErrors] = useState({});
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const newSection = clearId();
-    job.sections = newSection;
-    dispatch({ type: "ADD", job: job });
-    props.setTab("Manage Jobs");
+    const jobErrors = checkRequired(job);
+    const wrapperErrors = checkSection(section);
+    if (Object.keys(jobErrors).length > 0 || wrapperErrors) {
+      setErrors({ ...jobErrors, wrapper: wrapperErrors });
+    } else {
+      const newSection = clearId();
+      job.sections = newSection;
+      dispatch({ type: "ADD", job: job });
+      props.setTab("Manage Jobs");
+    }
   };
 
   return (
@@ -41,6 +53,8 @@ function CreateJob(props) {
         handleChange={handleChange}
         value={job.title}
       />
+      {errors.title && <Error error={errors.title} />}
+
       <Input
         label="Location"
         placeholder="Toronto, ON"
@@ -49,6 +63,8 @@ function CreateJob(props) {
         handleChange={handleChange}
         value={job.location}
       />
+      {errors.location && <Error error={errors.location} />}
+
       <Select
         label="Job Type"
         name="type"
@@ -57,6 +73,7 @@ function CreateJob(props) {
         handleChange={handleChange}
         value={job.type}
       />
+      {errors.type && <Error error={errors.type} />}
 
       {section.map((el) => (
         <Wrapper
@@ -65,6 +82,7 @@ function CreateJob(props) {
           title={el[`title${el.id}`]}
           description={el[`description${el.id}`]}
           handleChange={handleWrapperChange}
+          errors={errors}
         />
       ))}
 

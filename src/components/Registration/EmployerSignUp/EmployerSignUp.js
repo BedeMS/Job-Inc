@@ -1,7 +1,7 @@
 import React from "react";
 import classes from "./EmployerSignUp.module.css";
 import Input from "../../../elements/Input/Input";
-import Button from "../../../elements/Button/Button";
+import Submit from "../../../elements/Button/Submit/Submit";
 import Error from "../../../elements/Error/Error";
 import useFormHook from "../../../hooks/useFormHook";
 
@@ -68,7 +68,7 @@ function SignUp(props) {
       />
       {errors.password2 && <Error error={errors.password2} />}
 
-      <button type="submit">Sign Up</button>
+      <Submit name="Submit" />
 
       {/* <Button name="Sign Up" colorScheme="light" /> */}
     </form>
