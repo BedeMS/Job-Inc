@@ -2,22 +2,33 @@ import { useState } from "react";
 import uniqid from "uniqid";
 
 export default (initialState) => {
-  // create two object based on the amount of sections available on the page
-  let initSection = [
-    {
-      id: uniqid(),
-    },
-    {
-      id: uniqid(),
-    },
-  ];
+  let initSection;
 
-  // give each object a title and a description key with its id.
-  // why? b/c we want that title and desc to be together.
-  initSection.forEach((el) => {
-    el[`title${el.id}`] = "";
-    el[`description${el.id}`] = "";
-  });
+  if (!initialState) {
+    // create two object based on the amount of sections available on the page
+    initSection = [
+      {
+        id: uniqid(),
+      },
+      {
+        id: uniqid(),
+      },
+    ];
+    // give each object a title and a description key with its id.
+    // why? b/c we want that title and desc to be together.
+    initSection.forEach((el) => {
+      el[`title${el.id}`] = "";
+      el[`description${el.id}`] = "";
+    });
+  } else {
+    initSection = initialState.map((el) => {
+      el[`title${el.id}`] = el.title;
+      el[`description${el.id}`] = el.description;
+      delete el.title;
+      delete el.description;
+      return el;
+    });
+  }
 
   // initialize state with these two objects
   const [section, setSection] = useState(initSection);
@@ -33,7 +44,6 @@ export default (initialState) => {
       }
       return el;
     });
-
     setSection(newarr);
   };
 

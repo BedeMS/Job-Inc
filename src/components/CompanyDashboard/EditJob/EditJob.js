@@ -6,13 +6,16 @@ import Submit from "../../../elements/Button/Submit/Submit";
 import Wrapper from "../CreateJob/Wrapper/Wrapper";
 import useFormHook from "../../../hooks/useFormHook";
 import classes from "./EditJob.module.css";
+import useWrapper from "../../../hooks/useWrapperHook";
 import { DataContext } from "../../../context/companies.context";
 
 function EditJob({ job, toggle }) {
   const { dispatch } = useContext(DataContext);
   const [jobEditted, handleChange] = useFormHook(job);
-  // console.log(jobEditted);
-  //   const [section, handleWrapperChange, addSection, clearId] = useWrapper();
+  const [section, handleWrapperChange, addSection, clearId] = useWrapper(
+    job.sections
+  );
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -52,25 +55,17 @@ function EditJob({ job, toggle }) {
       />
       {/* {errors.type && <Error error={errors.type} />} */}
 
-      {/* {jobEditted.sections.map((el) => (
+      {section.map((el) => (
         <Wrapper
           key={el.id}
           id={el.id}
           title={el[`title${el.id}`]}
           description={el[`description${el.id}`]}
           handleChange={handleWrapperChange}
-          errors={errors}
+          // errors={errors}
         />
-      ))} */}
+      ))}
 
-      {/* <div className={classes.Wrapper}>
-        <Button
-          name="Add Section"
-          height="short"
-          colorScheme="light"
-          handleClick={() => addSection()}
-        />
-      </div> */}
       <div className={classes.Wrapper}>
         <Submit name="Submit" />
       </div>

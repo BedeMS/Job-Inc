@@ -1,4 +1,12 @@
 .EditJob {
-  height: 100%;
   width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 0;
+}
+
+.EditJob *:not(:last-child) {
+  margin-bottom: 2rem;
 }

@@ -19,8 +19,6 @@ function ManageJobs(props) {
   const handleEdit = function (id) {
     setJob(company.jobs.filter((el) => el.id === id));
     toggle();
-    // console.log(job);
-    // [job] = company.jobs.filter((el) => el.id === id);
   };
 
   return (
