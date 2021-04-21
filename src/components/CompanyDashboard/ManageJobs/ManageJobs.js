@@ -26,7 +26,7 @@ function ManageJobs(props) {
   return (
     <div className={classes.ManageJobs}>
       {isEditing ? (
-        <EditJob job={job[0]} />
+        <EditJob job={job[0]} toggle={toggle} />
       ) : company.jobs.length === 0 ? (
         <h1>No Jobs Posts Created</h1>
       ) : (

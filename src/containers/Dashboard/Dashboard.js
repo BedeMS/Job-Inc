@@ -36,7 +36,7 @@ const Dashboard = function (props) {
         />
       );
     } else if (tab === "Manage Jobs") {
-      return <ManageJobs history={props.history} />;
+      return <ManageJobs history={props.history} setTab={setTab} />;
     } else {
       return <EditProfile />;
     }

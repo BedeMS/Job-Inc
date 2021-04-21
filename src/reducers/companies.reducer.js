@@ -9,8 +9,17 @@ export const reducer = (state, action) => {
         }
         return el;
       });
-    // case "EDIT":
-    //   return ;
+    case "EDIT":
+      return state.map((el) => {
+        if (el.name === "Job Inc") {
+          el.jobs = el.jobs.map((job) =>
+            job.id === action.id ? (job = action.newJob) : job
+          );
+          return el;
+          // console.log(el.jobs)
+        }
+        return el;
+      });
     case "DELETE":
       return state.map((el) =>
         el.id === action.companyId

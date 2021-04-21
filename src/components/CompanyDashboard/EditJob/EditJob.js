@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import Input from "../../../elements/Input/Input";
 import Select from "../../../elements/Select/Select";
 import Error from "../../../elements/Error/Error";
@@ -6,16 +6,22 @@ import Submit from "../../../elements/Button/Submit/Submit";
 import Wrapper from "../CreateJob/Wrapper/Wrapper";
 import useFormHook from "../../../hooks/useFormHook";
 import classes from "./EditJob.module.css";
+import { DataContext } from "../../../context/companies.context";
 
-function EditJob({ job }) {
-    const [jobEditted, handleChange] = useFormHook(job);
-    // console.log(jobEditted);
-//   const [section, handleWrapperChange, addSection, clearId] = useWrapper();
+function EditJob({ job, toggle }) {
+  const { dispatch } = useContext(DataContext);
+  const [jobEditted, handleChange] = useFormHook(job);
+  // console.log(jobEditted);
+  //   const [section, handleWrapperChange, addSection, clearId] = useWrapper();
 
-
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    dispatch({ type: "EDIT", id: jobEditted.id, newJob: jobEditted });
+    toggle();
+  };
 
   return (
-    <form className={classes.EditJob}>
+    <form className={classes.EditJob} onSubmit={handleSubmit}>
       <Input
         label="Job Title"
         placeholder="Customer Service"
