@@ -21,12 +21,13 @@ export default (initialState) => {
       el[`description${el.id}`] = "";
     });
   } else {
-    initSection = initialState.map((el) => {
-      el[`title${el.id}`] = el.title;
-      el[`description${el.id}`] = el.description;
-      delete el.title;
-      delete el.description;
-      return el;
+    initSection = [];
+    initialState.forEach((el) => {
+      let section = {};
+      section.id = el.id;
+      section[`title${el.id}`] = el.title;
+      section[`description${el.id}`] = el.description;
+      initSection.push(section);
     });
   }
 

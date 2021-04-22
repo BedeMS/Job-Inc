@@ -1,4 +1,5 @@
 import React from "react";
+import uniqid from "uniqid";
 import classes from "./CompanyInfo.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import { fab } from "@fortawesome/free-brands-svg-icons";
@@ -45,8 +46,8 @@ function Info(props) {
       return (
         <div className={classes.Info}>
           <p className={classes.Info__label}>follow us</p>
-          {Object.values(el)[0].map((sm, i) => {
-            return <div>{socialMedia[Object.keys(sm)[0]]}</div>;
+          {Object.values(el)[0].map((sm, i) => { 
+            return <div key={uniqid()}>{socialMedia[Object.keys(sm)[0]]}</div>;
           })}
         </div>
       );

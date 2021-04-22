@@ -18,7 +18,7 @@ function Wrapper(props) {
         handleChange={props.handleChange}
         value={props.description}
       />
-      {/* {props.errors.wrapper && <Error error={props.errors.wrapper} />} */}
+      {props.errors.wrapper && <Error error={props.errors.wrapper} />}
     </div>
   );
 }
