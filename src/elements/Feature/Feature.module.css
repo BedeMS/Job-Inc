@@ -31,10 +31,36 @@
   font-size: 1.8rem;
   font-weight: 500;
   color: #868686;
-  transition: all .5s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
-
 
 .Feature__search:hover {
   color: #000000;
+}
+
+@media (max-width: 1436px) {
+  .Feature {
+    width: 45%;
+  }
+}
+
+@media (max-width: 1136px) {
+  .Feature {
+    width: 75%;
+    margin-bottom: 3rem;
+  }
+}
+
+@media (max-width: 836px) {
+  .Feature {
+    width: 95%;
+  }
+  .Feature__recent {
+    width: 95%;
+    margin: 2rem auto 0;
+  }
+  .Feature__search {
+    font-size: 1.4rem;
+    font-weight: 400;
+  }
 }
