@@ -29,3 +29,21 @@
   font-size: 1.7rem;
   outline: none;
 }
+
+@media (max-width: 636px) {
+  .InputWrapper {
+    margin-right: 0;
+  }
+
+  .Label,
+  .LabelDark {
+    font-size: 1.6rem;
+    width: 6rem;
+    margin-right: 1rem;
+  }
+
+  .Input {
+    width: 20rem;
+    height: 3.5rem;
+  }
+}

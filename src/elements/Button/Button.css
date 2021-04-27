@@ -49,3 +49,15 @@
 .ButtonShort {
   height: 3rem;
 }
+
+@media (max-width: 636px) {
+  .Button {
+    height: 4rem;
+    padding: 0 1rem;
+  }
+  .Button__name,
+  .Button__link {
+    font-size: 1.4rem;
+    font-weight: 400;
+  }
+}
