@@ -1,7 +1,7 @@
 .Auth {
   width: 100%;
-  max-height: 100vh;
-  overflow: hidden;
+  /* max-height: 100vh; */
+  /* overflow: hidden; */
 }
 
 .Auth__registration {
@@ -48,4 +48,33 @@
 .active:hover {
   background-color: #447bff;
   color: #000000;
+}
+
+@media (max-width: 1436px) {
+  .Auth__registration {
+    width: 75%;
+  }
+}
+@media (max-width: 1136px) {
+}
+@media (max-width: 836px) {
+  .Auth__registration {
+    width: 95%;
+  }
+
+  .Auth__registration__type {
+    font-size: 1.4rem;
+  }
+}
+@media (max-width: 636px) {
+}
+@media (max-width: 500px) {
+  .Auth__registration__type {
+    font-size: 1.4rem;
+    text-align: center;
+  }
+
+  .Auth__employerSignUp {
+    width: 120%;
+  }
 }
