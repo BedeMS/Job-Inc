@@ -10,7 +10,7 @@
 
 @media (max-width: 1136px) {
   .SearchBar {
-    height: 25rem;
+    height: 20rem;
     flex-direction: column;
     justify-content: space-evenly;
   }

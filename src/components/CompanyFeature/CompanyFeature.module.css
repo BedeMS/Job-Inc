@@ -36,3 +36,11 @@
   margin-left: auto;
   display: flex;
 }
+
+
+@media (max-width: 500px) {
+  .CompanyFeature__title,
+  .CompanyFeature__location {
+    font-size: 1.4rem;
+  }
+}

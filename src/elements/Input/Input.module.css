@@ -39,11 +39,11 @@
   .LabelDark {
     font-size: 1.6rem;
     width: 6rem;
-    margin-right: 1rem;
+    margin-right: 2rem;
   }
 
   .Input {
-    width: 20rem;
+    width: 17rem;
     height: 3.5rem;
   }
 }
