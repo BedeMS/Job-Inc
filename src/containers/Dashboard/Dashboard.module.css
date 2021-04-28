@@ -26,6 +26,7 @@
 @media (max-width: 836px) {
   .Board {
     flex-direction: column;
+    width: 95%;
   }
   .Board__tab {
     position: relative;

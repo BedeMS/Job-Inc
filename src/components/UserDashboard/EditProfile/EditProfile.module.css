@@ -25,3 +25,14 @@
   font-size: 2.4rem;
   text-align: center;
 }
+
+@media (max-width: 500px) {
+  .EditProfile__label {
+    margin-right: 1rem;
+    font-size: 1.4rem;
+  }
+  .EditProfile__input {
+    margin-right: 1rem;
+    font-size: 1.4rem;
+  }
+}
