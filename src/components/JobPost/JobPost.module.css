@@ -33,7 +33,7 @@
 }
 
 .JobPost__header_company {
-  color:  #0e30a7;
+  color: #0e30a7;
 }
 
 .JobPost__header_div {
@@ -49,4 +49,23 @@
 .JobDesc {
   height: 85%;
   overflow-y: scroll;
+}
+
+@media (max-width: 1436px) {
+  .JobPost__header_loc,
+  .JobPost__header_company {
+    font-size: 1.8rem;
+  }
+  .JobPost__header_buttons {
+    width: 35%;
+    display: flex;
+    justify-content: space-around;
+  }
+}
+
+@media (max-width: 1136px) {
+  .JobPost {
+    position: relative;
+    display: none;
+  }
 }
