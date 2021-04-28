@@ -30,16 +30,18 @@
   outline: none;
 }
 
-@media (max-width: 636px) {
-  .InputWrapper {
-    margin-right: 0;
-  }
-
+@media (max-width: 836px) {
   .Label,
   .LabelDark {
     font-size: 1.6rem;
     width: 6rem;
     margin-right: 2rem;
+  }
+}
+
+@media (max-width: 636px) {
+  .InputWrapper {
+    margin-right: 0;
   }
 
   .Input {
