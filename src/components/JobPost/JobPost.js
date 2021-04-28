@@ -3,10 +3,19 @@ import classes from "./JobPost.module.css";
 import Button from "../../elements/Button/Button";
 import SaveButton from "../../elements/SaveButton/SaveButton";
 import JobDesc from "./JobDesc/JobDesc";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function JobPost(props) {
+  const handleClick = (e) => {
+    console.log(e.target.target.closest(""))
+  }
   return (
     <div className={classes.JobPost}>
+      <FontAwesomeIcon
+        onClick={handleClick}
+        icon={["fas", "window-close"]}
+        className={classes.JobPost__close}
+      />
       <div className={classes.JobPost__header}>
         <p className={classes.JobPost__header_title}>{props.title}</p>
         <div className={classes.JobPost__header_div}>

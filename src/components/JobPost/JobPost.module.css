@@ -51,6 +51,27 @@
   overflow-y: scroll;
 }
 
+/* Close Icon */
+.JobPost__close {
+  display: none;
+  /* position: sticky;
+  -webkit-sticky: sticky; */
+  position: fixed;
+  top: 1rem;
+  right: 4rem;
+  color: #ff0a0a;
+  font-size: 4rem;
+  cursor: pointer;
+}
+
+.JobPost__close:hover {
+  color: #ff0a0aa4;
+}
+
+.active {
+  display: none;
+}
+
 @media (max-width: 1436px) {
   .JobPost__header_loc,
   .JobPost__header_company {
@@ -65,7 +86,48 @@
 
 @media (max-width: 1136px) {
   .JobPost {
-    position: relative;
-    display: none;
+    width: 90%;
+    height: 100vh;
+    margin: 2rem auto;
+    position: fixed;
+    top: -2rem;
+    left: 2;
+    display: flex;
+    flex-direction: column;
+  }
+  .JobPost__close {
+    display: block;
+  }
+  .JobDesc {
+    width: 95%;
+    /* overflow-y: scroll; */
+  }
+  .JobPost__header {
+    border: none;
+    margin: 1rem auto 2rem;
+
+  }
+  .JobPost__header_div {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1rem auto;
+    width: 100%;
+  }
+  .JobPost__header_title {
+    padding-top: 8rem;
+    font-size: 2.4rem;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  .JobPost__header_loc,
+  .JobPost__header_company {
+    margin-bottom: 1rem;
+  }
+  .JobPost__header_buttons {
+    width: 80%;
+    display: flex;
+    justify-content: space-around;
   }
 }
