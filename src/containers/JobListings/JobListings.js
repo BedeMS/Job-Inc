@@ -5,6 +5,7 @@ import SearchBar from "../../components/SearchBar/SearchBar";
 import JobCard from "../../components/JobCard/JobCard";
 import JobPost from "../../components/JobPost/JobPost";
 import classes from "./JobListings.module.css";
+import useToggle from "../../hooks/useToggleHook";
 import { DataContext } from "../../context/companies.context";
 
 function JobListings(props) {
@@ -12,14 +13,16 @@ function JobListings(props) {
   // let job;
   let [job] = jobs.filter((el) => el.id === props.match.params.id);
 
-  // console.log(company)
+  
   // **** THIS CODE IS BEING REPEATED Make Edit FROM COMPANY PAGE
   const [post, setPost] = useState(job);
 
+  const [display, toggle] = useToggle(false);
+
   const showPost = (id) => {
     const [job] = jobs.filter((el) => el.id === id);
-    console.log(id);
     setPost(job);
+    toggle();
   };
 
   return (
@@ -32,7 +35,7 @@ function JobListings(props) {
             <JobCard {...el} key={uniqid()} showPost={showPost} />
           ))}
         </div>
-        <JobPost {...post} />
+        <JobPost {...post} display={display} toggle={toggle} />
       </div>
     </div>
   );

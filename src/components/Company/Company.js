@@ -6,6 +6,7 @@ import JobCard from "../JobCard/JobCard";
 import JobPost from "../JobPost/JobPost";
 import uniqid from "uniqid";
 import classes from "./Company.module.css";
+import useToggle from "../../hooks/useToggleHook";
 import { DataContext } from "../../context/companies.context";
 
 function Company(props) {
@@ -23,10 +24,14 @@ function Company(props) {
   }
 
   const [post, setPost] = useState(firstJob);
+  const [display, toggle] = useToggle(false)
 
   const showPost = (id) => {
     const [job] = company.jobs.filter((el) => el.id === id);
     setPost(job);
+    console.log("job");
+    // under 1136px display is none. So we have to reset it
+    toggle();
   };
 
   return (
@@ -46,7 +51,7 @@ function Company(props) {
               <JobCard {...el} key={uniqid()} showPost={showPost} />
             ))}
           </div>
-          <JobPost {...post} />
+          <JobPost {...post} display={display} toggle={toggle}/>
         </div>
       )}
     </div>

@@ -7,10 +7,13 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function JobPost(props) {
   const handleClick = (e) => {
-    console.log(e.target.target.closest(""))
-  }
+    props.toggle();
+  };
   return (
-    <div className={classes.JobPost}>
+    <div
+      className={`${classes.JobPost} ${props.display && classes.JobActive}`}
+      id="JobPost"
+    >
       <FontAwesomeIcon
         onClick={handleClick}
         icon={["fas", "window-close"]}
