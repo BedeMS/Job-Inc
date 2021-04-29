@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import classes from "./JobPost.module.css";
 import Button from "../../elements/Button/Button";
 import SaveButton from "../../elements/SaveButton/SaveButton";
@@ -9,6 +9,13 @@ function JobPost(props) {
   const handleClick = (e) => {
     props.toggle();
   };
+
+  // const [saved, setSaved] = useState(props.saved);
+
+  // useEffect(() => {
+  //   setSaved(props.saved);
+  // }, [saved]);
+
   return (
     <div
       className={`${classes.JobPost} ${props.display && classes.JobActive}`}

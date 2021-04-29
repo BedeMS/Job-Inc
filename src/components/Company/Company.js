@@ -24,7 +24,7 @@ function Company(props) {
   }
 
   const [post, setPost] = useState(firstJob);
-  const [display, toggle] = useToggle(false)
+  const [display, toggle] = useToggle(false);
 
   const showPost = (id) => {
     const [job] = company.jobs.filter((el) => el.id === id);
@@ -33,6 +33,8 @@ function Company(props) {
     // under 1136px display is none. So we have to reset it
     toggle();
   };
+
+
 
   return (
     <div className={classes.Company}>
@@ -51,7 +53,7 @@ function Company(props) {
               <JobCard {...el} key={uniqid()} showPost={showPost} />
             ))}
           </div>
-          <JobPost {...post} display={display} toggle={toggle}/>
+          <JobPost {...post} display={display} toggle={toggle} />
         </div>
       )}
     </div>

@@ -17,7 +17,7 @@ function JobListings(props) {
   // **** THIS CODE IS BEING REPEATED Make Edit FROM COMPANY PAGE
   const [post, setPost] = useState(job);
 
-  const [display, toggle] = useToggle(false);
+  const [display, toggle] = useToggle(true);
 
   const showPost = (id) => {
     const [job] = jobs.filter((el) => el.id === id);

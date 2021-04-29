@@ -54,4 +54,9 @@
   .CompanyDetails__banner {
     display: none;
   }
+
+  .CompanyDetails__header__logo {
+    max-width: 7rem;
+    max-height: 7rem;
+  }
 }

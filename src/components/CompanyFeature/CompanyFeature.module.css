@@ -1,19 +1,19 @@
 .CompanyFeature {
   width: 95%;
   margin: 1rem auto;
-  height: 5rem;
+  height: 7rem;
   display: flex;
   align-items: center;
   /* justify-content: space-between; */
 }
 
 .CompanyFeature__img {
-  width: 5rem;
-  height: 5rem;
+  width: 6rem;
+  height: 6em;
 }
 
 .CompanyFeature__info {
-  margin-left: 2rem;
+  margin-left: 1rem;
   width: 50%;
   display: flex;
   justify-content: space-around;
