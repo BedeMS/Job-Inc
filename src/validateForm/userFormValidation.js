@@ -21,7 +21,7 @@ export default (values) => {
       errors.username = "Username required";
     }
   }
-
+ 
   // email
   if (!values.email) {
     errors.email = "Email required";
