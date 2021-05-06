@@ -1,9 +1,14 @@
 .JobListing__container {
-    width: 90%;
-    margin: 2rem auto;
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
-    position: relative;
+  width: 95%;
+  margin: 2rem auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: relative;
+}
+
+@media (max-width: 1136px) {
+  .JobListing__container {
+    justify-content: center;
   }
-  
+}

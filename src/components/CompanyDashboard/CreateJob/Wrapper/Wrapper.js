@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Input from "../../../../elements/Input/Input";
+import Error from "../../../../elements/Error/Error";
 import Textarea from "../../../../elements/Textarea/Textarea";
 import classes from "./Wrapper.module.css";
 
@@ -17,6 +18,7 @@ function Wrapper(props) {
         handleChange={props.handleChange}
         value={props.description}
       />
+      {props.errors.wrapper && <Error error={props.errors.wrapper} />}
     </div>
   );
 }

@@ -1,36 +1,35 @@
-import React, { Component } from "react";
+import React, { Component, useContext } from "react";
 import Header from "../../components/Header/Header";
 import SearchBar from "../../components/SearchBar/SearchBar";
 import Feature from "../../elements/Feature/Feature";
 import CompanyFeature from "../../components/CompanyFeature/CompanyFeature";
 import uniqid from "uniqid";
 import classes from "./BrowseCompanies.module.css";
+import { DataContext } from "../../context/companies.context";
 
-class BrowseCompanies extends Component {
-  render() {
-    const { featuredCompanies, handleFollow } = this.props;
-    return (
-      <div className={classes.Browse}>
-        <Header />
-        <SearchBar companies />
-        <div className={classes.Browse__features}>
-          <Feature
-            title="Top Companies"
-            className={classes.Browse__features__top}
-          >
-            {featuredCompanies.map((el) => (
-              <CompanyFeature key={uniqid()} {...el} handleFollow={handleFollow} />
-            ))}
-          </Feature>
-          <Feature title="Companies for You">
-            {featuredCompanies.map((el) => (
-              <CompanyFeature key={uniqid()} {...el} handleFollow={handleFollow} />
-            ))}
-          </Feature>
-        </div>
+function BrowseCompanies(props) {
+  const { companies } = useContext(DataContext);
+  return (
+    <div className={classes.Browse}>
+      <Header />
+      <SearchBar companies />
+      <div className={classes.Browse__features}>
+        <Feature
+          title="Top Companies"
+          className={classes.Browse__features__top}
+        >
+          {companies.map((el) => (
+            <CompanyFeature key={uniqid()} {...el} />
+          ))}
+        </Feature>
+        <Feature title="Companies for You">
+          {companies.map((el) => (
+            <CompanyFeature key={uniqid()} {...el} />
+          ))}
+        </Feature>
       </div>
-    );
-  }
+    </div>
+  );
 }
 
 export default BrowseCompanies;

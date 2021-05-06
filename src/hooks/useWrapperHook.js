@@ -2,21 +2,40 @@ import { useState } from "react";
 import uniqid from "uniqid";
 
 export default (initialState) => {
-  let initSection = [
-    {
-      id: uniqid(),
-    },
-    {
-      id: uniqid(),
-    },
-  ];
+  let initSection;
 
-  initSection.forEach((el) => {
-    el[`title${el.id}`] = "";
-    el[`description${el.id}`] = "";
-  });
+  if (!initialState) {
+    // create two object based on the amount of sections available on the page
+    initSection = [
+      {
+        id: uniqid(),
+      },
+      {
+        id: uniqid(),
+      },
+    ];
+    // give each object a title and a description key with its id.
+    // why? b/c we want that title and desc to be together.
+    initSection.forEach((el) => {
+      el[`title${el.id}`] = "";
+      el[`description${el.id}`] = "";
+    });
+  } else {
+    initSection = [];
+    initialState.forEach((el) => {
+      let section = {};
+      section.id = el.id;
+      section[`title${el.id}`] = el.title;
+      section[`description${el.id}`] = el.description;
+      initSection.push(section);
+    });
+  }
+
+  // initialize state with these two objects
   const [section, setSection] = useState(initSection);
 
+  // to control the input, we identify the object and then the name
+  // of the input to alter.
   const handleChange = (e) => {
     const { name, value } = e.target;
 
@@ -26,7 +45,6 @@ export default (initialState) => {
       }
       return el;
     });
-
     setSection(newarr);
   };
 

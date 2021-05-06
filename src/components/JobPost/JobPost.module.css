@@ -33,7 +33,7 @@
 }
 
 .JobPost__header_company {
-  color:  #0e30a7;
+  color: #0e30a7;
 }
 
 .JobPost__header_div {
@@ -49,4 +49,96 @@
 .JobDesc {
   height: 85%;
   overflow-y: scroll;
+}
+
+/* Close Icon */
+.JobPost__close {
+  display: none;
+  position: fixed;
+  top: 4rem;
+  right: 5rem;
+  color: #ff0a0a;
+  font-size: 4rem;
+  cursor: pointer;
+}
+
+.JobPost__close:hover {
+  color: #ff0a0aa4;
+}
+
+.JobPost.JobActive {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 1436px) {
+  .JobPost__header_loc,
+  .JobPost__header_company {
+    font-size: 1.8rem;
+  }
+  .JobPost__header_buttons {
+    width: 35%;
+    display: flex;
+    justify-content: space-around;
+  }
+}
+
+@media (max-width: 1136px) {
+  .JobPost {
+    display: none;
+    width: 95%;
+    max-height: 100vh;
+    height: 100vh;
+    margin: 0 auto;
+    position: fixed;
+    flex-direction: column;
+    padding: 2rem 0 4rem;
+  }
+  .JobPost__close {
+    display: block;
+  }
+  .JobDesc {
+    width: 95%;
+  }
+  .JobPost__header {
+    border: none;
+    margin: 4rem auto 2rem;
+    height: auto;
+  }
+  .JobPost__header_div {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1rem auto;
+    width: 100%;
+  }
+  .JobPost__header_title {
+    /* padding-top: 4rem; */
+    font-size: 2.4rem;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  .JobPost__header_loc,
+  .JobPost__header_company {
+    margin-bottom: 1rem;
+  }
+  .JobPost__header_buttons {
+    width: 80%;
+    display: flex;
+    justify-content: space-around;
+  }
+}
+
+@media (max-width: 636px){
+  .JobPost__close {
+    top: 2rem;
+    right: 4rem;
+  }
+}
+
+@media (max-width: 500px){
+  .JobPost__close {
+    right: 2rem;
+  }
 }

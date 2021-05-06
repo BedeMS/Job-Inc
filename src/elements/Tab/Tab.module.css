@@ -23,3 +23,12 @@
 .Tab__name {
   font-size: 1.8rem;
 }
+
+@media (max-width: 636px) {
+  .Tab {
+    width: 45%;
+  }
+  .Tab__name {
+    font-size: 1.4rem;
+  }
+}

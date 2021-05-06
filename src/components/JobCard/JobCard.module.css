@@ -4,7 +4,6 @@
   margin-left: 2rem;
   margin-top: 1rem;
   background-color: #f2f2f2;
-  /* background-color: #f9f9f9; */
   border-radius: 10px;
   padding: 2rem;
 }
@@ -50,10 +49,18 @@
 }
 
 .JobCard__modify{
-  /* display: flex; */
   height: auto;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
 
+}
+
+@media (max-width: 836px){
+  .JobCard {
+    display: flex;
+    width: 85%;
+    margin: 1rem auto;
+    padding: 2rem;
+  }
 }

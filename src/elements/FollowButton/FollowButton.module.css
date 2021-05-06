@@ -41,3 +41,18 @@
 .FollowButton__followed:hover {
   box-shadow: 0 5px 8px rgba(0, 0, 0, 0.6);
 }
+
+@media (max-width: 1136px) {
+}
+@media (max-width: 836px) {
+}
+@media (max-width: 636px) {
+  .FollowButton {
+    width: 6rem;
+    min-width: 4rem;
+  }
+  .FollowButton__name,
+  .FollowButton__followed {
+    font-size: 1.4rem;
+  }
+}

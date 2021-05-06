@@ -7,7 +7,12 @@ function Confirmation(props) {
     <div className={classes.Confirmation}>
       <div className={classes.Confirmation__header}>
         <h1 className={classes.Confirmation__title}>Confirmation</h1>
-        <Button colorScheme="light" name="Sign In" />
+        <Button
+          colorScheme="light"
+          name="Sign In"
+          to="/auth"
+          handleClick={props.reset}
+        />
       </div>
       <p className={classes.Confirmation__message}>
         Lorem Ipsum is simply dummy text of the printing and typesetting

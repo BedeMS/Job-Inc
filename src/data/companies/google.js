@@ -5,7 +5,8 @@ export default {
   name: "Google",
   banner:
     "https://images.squarespace-cdn.com/content/v1/5d03d3e13dba730001281532/1562017518896-UV4QJDJC0R0EU40JROSW/ke17ZwdGBToddI8pDm48kIQ25GA1u5j3npfvDvD4gSBZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZamWLI2zvYWH8K3-s_4yszcp2ryTI0HqTOaaUohrI8PIpI1zCrqI6jywjqNVe-kJhIrT7yZK08g4KkHGsoLI6Q4KMshLAGzx4R3EDFOm1kBS/google-banner.jpg",
-  logo: "http://assets.stickpng.com/thumbs/5847f9cbcef1014c0b5e48c8.png",
+  logo:
+    "https://www.freepnglogos.com/uploads/google-logo-png/google-logo-png-webinar-optimizing-for-success-google-business-webinar-13.png",
   repName: "Talksj SKJdlaf",
   email: "google@gmail.com",
   id: "google-23948919283",

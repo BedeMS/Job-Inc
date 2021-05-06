@@ -7,3 +7,11 @@
   background-color: #477bff;
   border-radius: 13px;
 }
+
+@media (max-width: 1136px) {
+  .SearchBar {
+    height: 20rem;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+}

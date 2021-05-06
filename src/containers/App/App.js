@@ -1,5 +1,4 @@
-import { Component } from "react";
-import employerData, { createJobs, featuredArr } from "../../data/data";
+import { DataProvider } from "../../context/companies.context";
 import JobListings from "../JobListings/JobListings";
 import Home from "../Home/Home";
 import Auth from "../Auth/Auth";
@@ -16,122 +15,32 @@ import "./App.css";
 
 library.add(far, fab, fas, faBookmark);
 
-class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      companies: employerData.companies,
-    };
-    this.handleSave = this.handleSave.bind(this);
-    this.handleFollow = this.handleFollow.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.jobs = createJobs(employerData.companies);
-    this.featuredJobs = featuredArr(this.jobs);
-  }
-
-  handleSave(id) {
-    const newData = this.state.companies.map((el) => {
-      el.jobs = el.jobs.map((el) =>
-        el.id === id ? { ...el, saved: !el.saved } : el
-      );
-      return el;
-    });
-
-    this.jobs = this.jobs.map((el) =>
-      el.id === id ? { ...el, saved: !el.saved } : el
-    );
-    this.featuredJobs = this.featuredJobs.map((el) =>
-      el.id === id ? { ...el, saved: !el.saved } : el
-    );
-    this.setState({ companies: newData });
-  }
-
-  handleFollow(id) {
-    const newData = this.state.companies.map((el) => {
-      if (el.id === id) {
-        return { ...el, follow: !el.follow };
-      }
-      return el;
-    });
-    this.setState({ companies: newData });
-  }
-
-  handleSubmit(job) {
-    const newData = this.state.companies.map((el) => {
-      if (el.name === "Job Inc") {
-        job.company = el.name;
-        job.logo = el.logo;
-        job.companyId = el.id;
-        el.jobs.push(job);
-        return el;
-      }
-      return el;
-    });
-
-    this.setState({ companies: newData });
-  }
-
-
-  render() {
-    const { companies } = this.state;
-    return (
+function App(props) {
+  return (
+    <DataProvider>
       <Switch>
+        <Route exact path="/" render={() => <Home />} />
+        <Route exact path="/companies" render={() => <BrowseCompanies />} />
         <Route
           exact
-          path="/"
-          render={() => (
-            <Home featured={this.featuredJobs} handleSave={this.handleSave} />
-          )}
+          path="/companies/:name"
+          render={(routeprops) => <Company {...routeprops} />}
+        />
+        <Route
+          exact
+          path="/jobs/:id"
+          render={(routeprops) => <JobListings {...routeprops} />}
         />
         <Route
           exact
           path="/employers"
-          render={(routeprops) => (
-            <Dashboard
-              {...routeprops}
-              company={companies.filter(el => el.name === "Job Inc")}
-              handleSubmit={this.handleSubmit}
-            />
-          )}
-        />
-        <Route
-          exact
-          path="/companies"
-          render={() => (
-            <BrowseCompanies
-              featuredCompanies={companies}
-              handleFollow={this.handleFollow}
-            />
-          )}
-        />
-        <Route
-          exact
-          path="/companies/:name"
-          render={(routeprops) => (
-            <Company
-              {...routeprops}
-              companies={companies}
-              handleFollow={this.handleFollow}
-              handleSave={this.handleSave}
-            />
-          )}
+          render={(routeprops) => <Dashboard {...routeprops} />}
         />
         <Route exact path="/auth" render={() => <Auth />} />
-        <Route
-          exact
-          path="/jobs/:id"
-          render={(routeprops) => (
-            <JobListings
-              {...routeprops}
-              jobs={this.jobs}
-              handleSave={this.handleSave}
-            />
-          )}
-        />
         <Route render={() => <NotFound />} />
       </Switch>
-    );
-  }
+    </DataProvider>
+  );
 }
 
 export default App;

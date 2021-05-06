@@ -20,6 +20,9 @@ function Select(props) {
         name={props.name}
         id={props.name}
       >
+        <option defaultValue value="">
+          Select an Option
+        </option>
         {options}
       </select>
     </div>

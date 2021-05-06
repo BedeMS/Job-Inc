@@ -20,7 +20,7 @@ function JobFeature(props) {
       </div>
       <div className={classes.JobFeature__time}>
         <p className={classes.JobFeature__date}>{dayjs().to(props.date)}</p>
-        <SaveButton saved={props.saved} id={props.id} handleSave={props.handleSave} />
+        <SaveButton saved={props.saved} id={props.id} companyId={props.companyId} />
         <p className={classes.JobFeature__hours}>Full Time</p>
       </div>
     </div>

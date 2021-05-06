@@ -22,3 +22,18 @@
   overflow-x: hidden;
   /* min-height: 80vh; */
 }
+
+@media (max-width: 836px) {
+  .Board {
+    flex-direction: column;
+    width: 95%;
+  }
+  .Board__tab {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+}
+@media (max-width: 636px) {
+}

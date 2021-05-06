@@ -20,7 +20,6 @@ function CompanyFeature(props) {
         <FollowButton
           follow={props.follow}
           id={props.id}
-          handleFollow={props.handleFollow}
         />
       </div>
     </div>

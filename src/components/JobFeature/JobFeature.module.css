@@ -53,3 +53,18 @@
 .JobFeature__hours {
   font-size: 1.4rem;
 }
+
+@media (max-width: 636px) {
+  .JobFeature__img {
+    width: 6rem;
+    height: 6rem;
+  }
+  .JobFeature__title {
+    font-size: 1.6rem;
+  }
+
+  .JobFeature__company,
+  .JobFeature__location {
+    font-size: 1.4rem;
+  }
+}

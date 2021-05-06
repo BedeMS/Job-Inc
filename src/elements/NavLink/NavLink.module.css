@@ -6,3 +6,9 @@
   color: black;
   text-decoration: none;
 }
+
+@media (max-width: 636px){
+  .NavLink {
+    font-size: 1.3rem;
+  }
+}

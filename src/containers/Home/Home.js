@@ -1,36 +1,34 @@
-import React, { Component } from "react";
+import React, { useContext, useEffect } from "react";
+import { createJobs, featuredArr } from "../../data/data";
 import Header from "../../components/Header/Header";
 import SearchBar from "../../components/SearchBar/SearchBar";
 import Feature from "../../elements/Feature/Feature";
 import JobFeature from "../../components/JobFeature/JobFeature";
 import uniqid from "uniqid";
 import classes from "./Home.module.css";
+import { DataContext } from "../../context/companies.context";
 
-class Home extends Component {
-  constructor(props) {
-    super(props);
-  }
-  render() {
-    const { featured, handleSave } = this.props;
-    return (
-      <div className={classes.Home}>
-        <Header />
-        <SearchBar />
-        <div className={classes.Home__features}>
-          <Feature title="Featured Jobs for You">
-            {featured.map((el) => (
-              <JobFeature {...el} key={uniqid()} handleSave={handleSave} />
-            ))}
-          </Feature>
-          <Feature title="Based on Your Recent Search" recentSearch>
-            {featured.map((el) => (
-              <JobFeature {...el} key={uniqid()} handleSave={handleSave} />
-            ))}
-          </Feature>
-        </div>
+function Home() {
+  const { featuredJobs } = useContext(DataContext);
+
+  return (
+    <div className={classes.Home}>
+      <Header />
+      <SearchBar />
+      <div className={classes.Home__features}>
+        <Feature title="Featured Jobs for You">
+          {featuredJobs.map((el) => (
+            <JobFeature {...el} key={uniqid()} />
+          ))}
+        </Feature>
+        <Feature title="Based on Your Recent Search" recentSearch>
+          {featuredJobs.map((el) => (
+            <JobFeature {...el} key={uniqid()} />
+          ))}
+        </Feature>
       </div>
-    );
-  }
+    </div>
+  );
 }
 
 export default Home;

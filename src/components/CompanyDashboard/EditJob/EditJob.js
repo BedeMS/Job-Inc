@@ -1,57 +1,50 @@
 import React, { useContext, useState } from "react";
-import uniqid from "uniqid";
-import useWrapper from "../../../hooks/useWrapperHook";
-import {
-  checkRequired,
-  checkSection,
-} from "../../../validateForm/jobFormValidation";
-import useFormHook from "../../../hooks/useFormHook";
-import classes from "./CreateJob.module.css";
 import Input from "../../../elements/Input/Input";
 import Select from "../../../elements/Select/Select";
 import Error from "../../../elements/Error/Error";
 import Button from "../../../elements/Button/Button";
 import Submit from "../../../elements/Button/Submit/Submit";
-import Wrapper from "./Wrapper/Wrapper";
+import Wrapper from "../CreateJob/Wrapper/Wrapper";
+import useFormHook from "../../../hooks/useFormHook";
+import classes from "./EditJob.module.css";
+import useWrapper from "../../../hooks/useWrapperHook";
+import {
+  checkRequired,
+  checkSection,
+} from "../../../validateForm/jobFormValidation";
 import { DataContext } from "../../../context/companies.context";
 
-function CreateJob(props) {
+function EditJob({ job, toggle }) {
   const { dispatch } = useContext(DataContext);
-  const jobInit = {
-    date: new Date().toLocaleDateString(),
-    saved: false,
-    id: uniqid(),
-    title: "",
-    location: "",
-    type: "",
-  };
-  const [job, handleChange] = useFormHook(jobInit);
-  const [section, handleWrapperChange, addSection, clearId] = useWrapper();
+  const [jobEditted, handleChange] = useFormHook(job);
+  const [section, handleWrapperChange, addSection, clearId] = useWrapper(
+    job.sections
+  );
   const [errors, setErrors] = useState({});
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const jobErrors = checkRequired(job);
+    const jobErrors = checkRequired(jobEditted);
     const wrapperErrors = checkSection(section);
     if (Object.keys(jobErrors).length > 0 || wrapperErrors) {
       setErrors({ ...jobErrors, wrapper: wrapperErrors });
     } else {
       const newSection = clearId();
       job.sections = newSection;
-      dispatch({ type: "ADD", job: job });
-      props.setTab("Manage Jobs");
+      dispatch({ type: "EDIT", id: jobEditted.id, newJob: jobEditted });
+      toggle();
     }
   };
- 
+
   return (
-    <form className={classes.CreateJob} onSubmit={handleSubmit}>
+    <form className={classes.EditJob} onSubmit={handleSubmit}>
       <Input
         label="Job Title"
         placeholder="Customer Service"
         name="title"
         colorScheme="dark"
         handleChange={handleChange}
-        value={job.title}
+        value={jobEditted.title}
       />
       {errors.title && <Error error={errors.title} />}
 
@@ -61,7 +54,7 @@ function CreateJob(props) {
         name="location"
         colorScheme="dark"
         handleChange={handleChange}
-        value={job.location}
+        value={jobEditted.location}
       />
       {errors.location && <Error error={errors.location} />}
 
@@ -71,7 +64,7 @@ function CreateJob(props) {
         options={["Full Time", "Part Time", "On Call"]}
         values={["Full Time", "Part Time", "On Call"]}
         handleChange={handleChange}
-        value={job.type}
+        value={jobEditted.type}
       />
       {errors.type && <Error error={errors.type} />}
 
@@ -94,6 +87,7 @@ function CreateJob(props) {
           handleClick={() => addSection()}
         />
       </div>
+
       <div className={classes.Wrapper}>
         <Submit name="Submit" />
       </div>
@@ -101,4 +95,4 @@ function CreateJob(props) {
   );
 }
 
-export default CreateJob;
+export default EditJob;

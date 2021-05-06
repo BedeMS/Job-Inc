@@ -27,3 +27,18 @@
   font-size: 1.8rem;
   width: 80%;
 }
+
+@media (max-width: 1436px) {
+  .JobDesc p,
+  .JobDesc li {
+    font-size: 1.6rem;
+    width: 95%;
+  }
+}
+
+@media (max-width: 1136px) {
+  .JobDesc {
+    width: 95%;
+    height: auto;
+  }
+}

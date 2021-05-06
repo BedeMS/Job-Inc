@@ -25,4 +25,38 @@
 .CompanyDetails__header__title {
   font-size: 5rem;
   font-weight: 600;
+  text-align: center;
+}
+
+@media (max-width: 1136px) {
+  .CompanyDetails__header__title {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 836px) {
+  .CompanyDetails {
+    width: 95%;
+  }
+}
+
+@media (max-width: 636px) {
+  .CompanyDetails__header__title {
+    font-size: 2rem;
+  }
+  .CompanyDetails__header__logo {
+    max-width: 10rem;
+    max-height: 10rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .CompanyDetails__banner {
+    display: none;
+  }
+
+  .CompanyDetails__header__logo {
+    max-width: 7rem;
+    max-height: 7rem;
+  }
 }
