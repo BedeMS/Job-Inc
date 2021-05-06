@@ -1,7 +1,6 @@
-import uniqid from "uniqid";
 import logo from "../../assets/img/jobLogo.png";
 
-export default {
+const jobInc = {
   follow: false,
   name: "Job Inc",
   logo,
@@ -23,3 +22,5 @@ export default {
   ],
   jobs: [],
 };
+
+export default jobInc;

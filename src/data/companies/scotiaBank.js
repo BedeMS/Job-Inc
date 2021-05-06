@@ -1,6 +1,6 @@
 import uniqid from "uniqid";
 
-export default {
+const scotia = {
   follow: false,
   name: "Scotia Bank",
   banner:
@@ -142,3 +142,5 @@ export default {
     },
   ],
 };
+
+export default scotia;

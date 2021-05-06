@@ -1,5 +1,4 @@
-import React, { useContext, useEffect } from "react";
-import { createJobs, featuredArr } from "../../data/data";
+import React, { useContext } from "react";
 import Header from "../../components/Header/Header";
 import SearchBar from "../../components/SearchBar/SearchBar";
 import Feature from "../../elements/Feature/Feature";

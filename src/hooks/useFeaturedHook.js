@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default (initialState) => {
+const useFeaturedHook = (initialState) => {
   const [featured, setFeatured] = useState(initialState);
 
   //keep same featured jobs and update each job
@@ -18,3 +18,5 @@ export default (initialState) => {
 
   return [featured, setFeatured, updateFeaturedJobs];
 };
+
+export default useFeaturedHook;

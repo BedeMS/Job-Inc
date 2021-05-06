@@ -1,11 +1,10 @@
-import React, { useContext } from "react";
+import React from "react";
 import classes from "./JobCard.module.css";
 import SaveButton from "../../elements/SaveButton/SaveButton";
 import PostedDate from "./PostedDate/PostedDate";
 import ModifyButton from "../../elements/ModifyButton/ModifyButton";
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
-import { DataContext } from "../../context/companies.context";
 
 dayjs.extend(relativeTime);
 

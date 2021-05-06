@@ -4,7 +4,6 @@ import Header from "../../components/Header/Header";
 import Tab from "../../elements/Tab/Tab";
 import classes from "./Dashboard.module.css";
 import CreateJob from "../../components/CompanyDashboard/CreateJob/CreateJob";
-import EmployerEditProfile from "../../components/CompanyDashboard/EditProfile/EditProfile";
 import ManageJobs from "../../components/CompanyDashboard/ManageJobs/ManageJobs";
 import UserEditProfile from "../../components/UserDashboard/EditProfile/EditProfile";
 import SavedCompanies from "../../components/UserDashboard/SavedCompanies/SavedCompanies";

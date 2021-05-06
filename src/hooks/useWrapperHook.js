@@ -1,7 +1,7 @@
 import { useState } from "react";
 import uniqid from "uniqid";
 
-export default (initialState) => {
+const useWrapperHook = (initialState) => {
   let initSection;
 
   if (!initialState) {
@@ -74,3 +74,5 @@ export default (initialState) => {
 
   return [section, handleChange, addSection, clearId];
 };
+
+export default useWrapperHook;

@@ -1,6 +1,6 @@
 import uniqid from "uniqid";
 
-export default {
+const google = {
   follow: false,
   name: "Google",
   banner:
@@ -145,3 +145,5 @@ export default {
     },
   ],
 };
+
+export default google;

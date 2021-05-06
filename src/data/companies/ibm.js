@@ -1,6 +1,6 @@
 import uniqid from "uniqid";
 
-export default {
+const ibm = {
   follow: false,
   name: "IBM",
   banner:
@@ -143,3 +143,5 @@ export default {
     },
   ],
 };
+
+export default ibm;

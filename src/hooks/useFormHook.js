@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import useToggleHook from "../hooks/useToggleHook";
 import validate from "../validateForm/userFormValidation";
 
-export default (initVal, callback) => {
+const useFormHook = (initVal, callback) => {
   const [values, setState] = useState(initVal);
   const [errors, setErrors] = useState({});
   const [submit, isSubmitting] = useToggleHook(false);
@@ -26,3 +26,6 @@ export default (initVal, callback) => {
 
   return [values, handleChange, errors, handleSubmit];
 };
+
+
+export default useFormHook;

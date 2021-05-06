@@ -1,5 +1,5 @@
 // logic to check registration form
-export default (values) => {
+const userFormValidation = (values) => {
   let errors = {};
 
   // fullName
@@ -21,7 +21,7 @@ export default (values) => {
       errors.username = "Username required";
     }
   }
- 
+
   // email
   if (!values.email) {
     errors.email = "Email required";
@@ -45,3 +45,5 @@ export default (values) => {
 
   return errors;
 };
+
+export default userFormValidation;

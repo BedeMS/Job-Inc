@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default (initState) => {
+const useInputHook = (initState) => {
   const [state, setState] = useState(initState);
 
   const handleChange = (e) => {
@@ -14,3 +14,6 @@ export default (initState) => {
 
   return [state, handleChange, reset];
 };
+
+
+export default useInputHook;

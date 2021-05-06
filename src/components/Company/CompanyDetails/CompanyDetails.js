@@ -1,6 +1,5 @@
 import React from "react";
 import classes from "./CompanyDetails.module.css";
-import banner from "../../../assets/img/companyBanner.jpeg";
 import CompanyLogo from "../../../elements/CompanyLogo/CompanyLogo";
 import FollowButton from "../../../elements/FollowButton/FollowButton";
 import CompanyInfo from "../CompanyInfo/CompanyInfo";
@@ -10,7 +9,11 @@ function CompanyDetails(props) {
   return (
     <div className={classes.CompanyDetails}>
       {props.banner ? (
-        <img className={classes.CompanyDetails__banner} src={props.banner} />
+        <img
+          className={classes.CompanyDetails__banner}
+          src={props.banner}
+          alt="Company Banner"
+        />
       ) : (
         ""
       )}

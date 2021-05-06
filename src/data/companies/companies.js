@@ -4,4 +4,6 @@ import google from "./google";
 import scotiaBank from "./scotiaBank";
 import jobinc from "./jobinc";
 
-export default [td, ibm, google, scotiaBank, jobinc];
+const companies = [td, ibm, google, scotiaBank, jobinc];
+
+export default companies;

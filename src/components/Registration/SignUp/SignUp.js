@@ -4,8 +4,6 @@ import Input from "../../../elements/Input/Input";
 import Error from "../../../elements/Error/Error";
 import Submit from "../../../elements/Button/Submit/Submit";
 import useFormHook from "../../../hooks/useFormHook";
-import useToggleHook from "../../../hooks/useToggleHook";
-import validate from "../../../validateForm/userFormValidation";
 
 const initForm = {
   fullName: "",

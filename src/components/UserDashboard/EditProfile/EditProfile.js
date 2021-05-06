@@ -1,6 +1,5 @@
 import React from "react";
 import classes from "./EditProfile.module.css";
-import ModifyButton from "../../../elements/ModifyButton/ModifyButton";
 import Button from "../../../elements/Button/Button";
 
 function EditProfile(props) {

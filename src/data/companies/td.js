@@ -1,6 +1,6 @@
 import uniqid from "uniqid";
 
-export default {
+const td = {
   follow: false,
   name: "Toronto Dominion - TD",
   banner:
@@ -108,3 +108,5 @@ export default {
     },
   ],
 };
+
+export default td;
